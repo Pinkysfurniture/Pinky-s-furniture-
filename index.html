@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinky's Furniture</title>
 
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .contenedor {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .productos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .producto {
+            background: white;
+            padding: 25px;
+            width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .producto h3 {
+            margin-top: 0;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Pinky's Furniture</h1>
+        <p>Muebles y soluciones para tu negocio</p>
+    </header>
+
+    <div class="contenedor">
+
+        <h2>Nuestros productos</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <h3>Sillas</h3>
+                <p>Sillas para restaurantes, negocios y otros espacios.</p>
+            </div>
+
+            <div class="producto">
+                <h3>Mesas</h3>
+                <p>Mesas para diferentes tipos de negocios.</p>
+            </div>
+
+            <div class="producto">
+                <h3>Muebles</h3>
+                <p>Soluciones de mobiliario para tu negocio.</p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <a class="boton" href="#">
+            Cotizar por WhatsApp
+        </a>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Pinky's Furniture</p>
+    </footer>
+
+</body>
+</html>
