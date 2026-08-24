@@ -5,7 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinky's Furniture</title>
 
-    <style>
+    /* ===== CATÁLOGO PINKY'S FURNITURE ===== */
+
+.catalogo {
+    background: #fff7fb;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.catalogo h2 {
+    font-size: 38px;
+    color: #e85b9d;
+    margin-bottom: 10px;
+}
+
+.catalogo p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.producto {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(232,91,157,0.25);
+}
+
+.producto img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    color: #222;
+    font-size: 21px;
+    margin: 10px 0;
+}
+
+.producto .precio {
+    color: #e85b9d;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.boton-whatsapp {
+    display: inline-block;
+    background: #e85b9d;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.boton-whatsapp:hover {
+    background: #d94789;
+}<style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
