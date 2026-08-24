@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pinky's Furniture</title>
+    <title>Pinky's Furniture | Muebles y equipamiento</title>
 
     <style>
         * {
@@ -13,41 +13,56 @@
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #fff7fb;
             color: #222;
         }
+
+        /* ===== PORTADA ===== */
 
         header {
             background: #e85b9d;
             color: white;
             text-align: center;
-            padding: 35px 20px;
+            padding: 45px 20px 55px;
+        }
+
+        .logo {
+            width: 190px;
+            max-width: 75%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 18px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 42px;
+            font-size: 44px;
         }
 
         header p {
-            font-size: 19px;
-            margin-bottom: 0;
+            font-size: 20px;
+            margin: 12px 0 0;
         }
+
+        /* ===== CONTENEDOR ===== */
 
         .contenedor {
             max-width: 1200px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 45px 20px;
         }
+
+        /* ===== CATÁLOGO ===== */
 
         .catalogo {
             text-align: center;
             background: white;
-            padding: 45px 20px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-bottom: 45px;
+            padding: 50px 25px;
+            border-radius: 22px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
         }
 
         .catalogo h2 {
@@ -59,6 +74,7 @@
         .catalogo p {
             color: #555;
             font-size: 18px;
+            line-height: 1.6;
             margin-bottom: 30px;
         }
 
@@ -66,7 +82,7 @@
             display: inline-block;
             background: #e85b9d;
             color: white;
-            padding: 15px 28px;
+            padding: 16px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
@@ -76,14 +92,15 @@
 
         .boton-catalogo:hover {
             background: #d94789;
-            transform: scale(1.03);
+            transform: translateY(-2px);
         }
+
+        /* ===== PRODUCTOS ===== */
 
         .titulo-productos {
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 30px;
-            color: #222;
+            font-size: 34px;
+            margin-bottom: 35px;
         }
 
         .productos {
@@ -94,54 +111,96 @@
 
         .producto {
             background: white;
-            padding: 30px 20px;
+            padding: 35px 22px;
             text-align: center;
-            border-radius: 18px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: 0.3s;
         }
 
         .producto:hover {
             transform: translateY(-7px);
-            box-shadow: 0 10px 25px rgba(232,91,157,0.25);
+            box-shadow: 0 10px 30px rgba(232, 91, 157, 0.25);
+        }
+
+        .producto-icono {
+            font-size: 55px;
+            margin-bottom: 10px;
         }
 
         .producto h3 {
             color: #e85b9d;
-            font-size: 23px;
+            font-size: 24px;
+            margin: 10px 0;
         }
 
         .producto p {
             color: #555;
-            line-height: 1.5;
+            line-height: 1.6;
         }
+
+        /* ===== WHATSAPP ===== */
 
         .boton-whatsapp {
             display: inline-block;
             margin-top: 15px;
-            padding: 12px 22px;
+            padding: 13px 24px;
             background: #25D366;
             color: white;
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
+            transition: 0.3s;
         }
+
+        .boton-whatsapp:hover {
+            transform: scale(1.04);
+        }
+
+        /* ===== PIE DE PÁGINA ===== */
 
         footer {
             background: #222;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 28px 20px;
             margin-top: 50px;
         }
 
+        footer p {
+            margin: 5px;
+        }
+
+        /* ===== CELULARES ===== */
+
         @media (max-width: 600px) {
+
+            header {
+                padding: 35px 15px 45px;
+            }
+
             header h1 {
                 font-size: 32px;
             }
 
+            header p {
+                font-size: 17px;
+            }
+
+            .logo {
+                width: 150px;
+            }
+
             .catalogo h2 {
                 font-size: 30px;
+            }
+
+            .titulo-productos {
+                font-size: 28px;
+            }
+
+            .contenedor {
+                padding: 30px 15px;
             }
         }
     </style>
@@ -149,77 +208,166 @@
 
 <body>
 
+    <!-- ===== PORTADA ===== -->
+
     <header>
+
+        <img
+            src="WhatsApp%20Image%202026-08-24%20at%205.34.28%20PM.jpeg"
+            alt="Pinky's Furniture"
+            class="logo">
+
         <h1>Pinky's Furniture</h1>
-        <p>Muebles y soluciones para tu negocio</p>
+
+        <p>
+            Muebles y soluciones para tu negocio
+        </p>
+
     </header>
+
+
+    <!-- ===== CONTENIDO ===== -->
 
     <main class="contenedor">
 
+
+        <!-- CATÁLOGO -->
+
         <section class="catalogo">
-            <h2>🪑 Nuestro Catálogo</h2>
+
+            <h2>
+                🪑 Nuestro Catálogo
+            </h2>
 
             <p>
-                Descubre nuestra colección de muebles y equipamiento
-                para restaurantes, negocios y hogares.
+                Descubre nuestra colección de muebles,
+                sillas y equipamiento para restaurantes,
+                negocios y hogares.
             </p>
 
             <a
                 href="CATALOGO_PINKYS_FURNITURE_ACTUALIZADO.pdf"
                 target="_blank"
                 class="boton-catalogo">
+
                 📖 VER CATÁLOGO COMPLETO
+
             </a>
+
         </section>
+
+
+        <!-- PRODUCTOS -->
 
         <h2 class="titulo-productos">
             Nuestros productos
         </h2>
 
+
         <section class="productos">
 
-            <div class="producto">
-                <h3>🪑 Sillas</h3>
-                <p>
-                    Sillas para restaurantes, negocios
-                    y diferentes espacios.
-                </p>
 
-                <a class="boton-whatsapp" href="#">
-                    Consultar
-                </a>
-            </div>
+            <!-- SILLAS -->
 
             <div class="producto">
-                <h3>🪵 Mesas</h3>
+
+                <div class="producto-icono">
+                    🪑
+                </div>
+
+                <h3>
+                    Sillas
+                </h3>
+
                 <p>
-                    Mesas para restaurantes, comercios
-                    y otros proyectos.
+                    Sillas para restaurantes,
+                    negocios y diferentes espacios.
                 </p>
 
-                <a class="boton-whatsapp" href="#">
-                    Consultar
+                <a
+                    class="boton-whatsapp"
+                    href="https://wa.me/569XXXXXXXX">
+
+                    Consultar por WhatsApp
+
                 </a>
+
             </div>
+
+
+            <!-- MESAS -->
 
             <div class="producto">
-                <h3>🛋️ Muebles</h3>
+
+                <div class="producto-icono">
+                    🪵
+                </div>
+
+                <h3>
+                    Mesas
+                </h3>
+
                 <p>
-                    Soluciones de mobiliario para
-                    hogares y negocios.
+                    Mesas para restaurantes,
+                    comercios y proyectos.
                 </p>
 
-                <a class="boton-whatsapp" href="#">
-                    Consultar
+                <a
+                    class="boton-whatsapp"
+                    href="https://wa.me/569XXXXXXXX">
+
+                    Consultar por WhatsApp
+
                 </a>
+
             </div>
+
+
+            <!-- MUEBLES -->
+
+            <div class="producto">
+
+                <div class="producto-icono">
+                    🛋️
+                </div>
+
+                <h3>
+                    Muebles
+                </h3>
+
+                <p>
+                    Soluciones de mobiliario
+                    para hogares y negocios.
+                </p>
+
+                <a
+                    class="boton-whatsapp"
+                    href="https://wa.me/569XXXXXXXX">
+
+                    Consultar por WhatsApp
+
+                </a>
+
+            </div>
+
 
         </section>
 
     </main>
 
+
+    <!-- ===== PIE DE PÁGINA ===== -->
+
     <footer>
-        <p>© 2026 Pinky's Furniture</p>
+
+        <p>
+            © 2026 Pinky's Furniture
+        </p>
+
+        <p>
+            Muebles y equipamiento para tu negocio
+        </p>
+
     </footer>
 
 </body>
