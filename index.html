@@ -1,266 +1,659 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Pinky's Furniture | Muebles y equipamiento</title>
 
+
     <style>
+
         * {
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             background: #fff7fb;
+
             color: #222;
+
         }
 
-        /* ===== PORTADA ===== */
+
+        /* =========================
+           PORTADA
+        ========================= */
 
         header {
-            background: #e85b9d;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e85b9d,
+                    #f28abb
+                );
+
             color: white;
+
             text-align: center;
-            padding: 45px 20px 55px;
+
+            padding:
+                45px 20px 55px;
+
         }
+
 
         .logo {
+
             width: 190px;
+
             max-width: 75%;
+
             height: auto;
+
             display: block;
-            margin: 0 auto 20px;
+
+            margin:
+                0 auto 20px;
+
             border-radius: 18px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.15);
+
         }
+
 
         header h1 {
+
             margin: 0;
+
             font-size: 44px;
+
+            letter-spacing: 1px;
+
         }
+
 
         header p {
+
             font-size: 20px;
-            margin: 12px 0 0;
+
+            margin:
+                12px 0 0;
+
         }
 
-        /* ===== CONTENEDOR ===== */
+
+        /* =========================
+           BOTÓN WHATSAPP PORTADA
+        ========================= */
+
+        .portada-whatsapp {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding:
+                16px 30px;
+
+            background: #25D366;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 6px 15px
+                rgba(0,0,0,0.18);
+
+            transition: 0.3s;
+
+        }
+
+
+        .portada-whatsapp:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 10px 22px
+                rgba(0,0,0,0.22);
+
+        }
+
+
+        /* =========================
+           CONTENEDOR
+        ========================= */
 
         .contenedor {
+
             max-width: 1200px;
+
             margin: auto;
-            padding: 45px 20px;
+
+            padding:
+                45px 20px;
+
         }
 
-        /* ===== CATÁLOGO ===== */
+
+        /* =========================
+           CATÁLOGO
+        ========================= */
 
         .catalogo {
+
             text-align: center;
+
             background: white;
-            padding: 50px 25px;
+
+            padding:
+                50px 25px;
+
             border-radius: 22px;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 6px 25px
+                rgba(0,0,0,0.08);
+
             margin-bottom: 50px;
+
         }
+
 
         .catalogo h2 {
+
             font-size: 38px;
+
             color: #e85b9d;
-            margin: 0 0 12px;
+
+            margin:
+                0 0 12px;
+
         }
+
 
         .catalogo p {
+
             color: #555;
+
             font-size: 18px;
+
             line-height: 1.6;
+
             margin-bottom: 30px;
+
         }
+
 
         .boton-catalogo {
+
             display: inline-block;
+
             background: #e85b9d;
+
             color: white;
-            padding: 16px 30px;
+
+            padding:
+                16px 30px;
+
             border-radius: 30px;
+
             text-decoration: none;
+
             font-weight: bold;
+
             font-size: 17px;
+
             transition: 0.3s;
+
         }
+
 
         .boton-catalogo:hover {
+
             background: #d94789;
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-2px);
+
         }
 
-        /* ===== PRODUCTOS ===== */
+
+        /* =========================
+           PRODUCTOS
+        ========================= */
 
         .titulo-productos {
+
             text-align: center;
+
             font-size: 34px;
+
             margin-bottom: 35px;
+
         }
+
 
         .productos {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(240px, 1fr)
+                );
+
             gap: 25px;
+
         }
+
 
         .producto {
+
             background: white;
-            padding: 35px 22px;
+
+            padding:
+                35px 22px;
+
             text-align: center;
+
             border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,0,0,0.08);
+
             transition: 0.3s;
+
         }
+
 
         .producto:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 30px rgba(232, 91, 157, 0.25);
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(
+                    232,
+                    91,
+                    157,
+                    0.25
+                );
+
         }
+
 
         .producto-icono {
+
             font-size: 55px;
+
             margin-bottom: 10px;
+
         }
+
 
         .producto h3 {
+
             color: #e85b9d;
+
             font-size: 24px;
-            margin: 10px 0;
+
+            margin:
+                10px 0;
+
         }
+
 
         .producto p {
+
             color: #555;
+
             line-height: 1.6;
+
         }
 
-        /* ===== WHATSAPP ===== */
+
+        /* =========================
+           BOTÓN WHATSAPP TARJETAS
+        ========================= */
 
         .boton-whatsapp {
+
             display: inline-block;
+
             margin-top: 15px;
-            padding: 13px 24px;
+
+            padding:
+                13px 24px;
+
             background: #25D366;
+
             color: white;
+
             text-decoration: none;
+
             border-radius: 25px;
+
             font-weight: bold;
+
             transition: 0.3s;
+
         }
+
 
         .boton-whatsapp:hover {
-            transform: scale(1.04);
+
+            transform:
+                scale(1.04);
+
         }
 
-        /* ===== PIE DE PÁGINA ===== */
+
+        /* =========================
+           WHATSAPP FLOTANTE
+        ========================= */
+
+        .whatsapp-flotante {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            width: 62px;
+
+            height: 62px;
+
+            background: #25D366;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 30px;
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.25);
+
+            z-index: 999;
+
+            transition: 0.3s;
+
+        }
+
+
+        .whatsapp-flotante:hover {
+
+            transform:
+                scale(1.1);
+
+        }
+
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
 
         footer {
+
             background: #222;
+
             color: white;
+
             text-align: center;
-            padding: 28px 20px;
+
+            padding:
+                28px 20px;
+
             margin-top: 50px;
+
         }
+
 
         footer p {
+
             margin: 5px;
+
         }
 
-        /* ===== CELULARES ===== */
+
+        /* =========================
+           CELULARES
+        ========================= */
 
         @media (max-width: 600px) {
 
+
             header {
-                padding: 35px 15px 45px;
+
+                padding:
+                    35px 15px 45px;
+
             }
+
 
             header h1 {
+
                 font-size: 32px;
+
             }
+
 
             header p {
+
                 font-size: 17px;
+
             }
+
 
             .logo {
+
                 width: 150px;
+
             }
+
 
             .catalogo h2 {
+
                 font-size: 30px;
+
             }
+
 
             .titulo-productos {
+
                 font-size: 28px;
+
             }
 
+
             .contenedor {
-                padding: 30px 15px;
+
+                padding:
+                    30px 15px;
+
             }
+
+
+            .portada-whatsapp {
+
+                font-size: 15px;
+
+                padding:
+                    14px 22px;
+
+            }
+
+
+            .whatsapp-flotante {
+
+                width: 56px;
+
+                height: 56px;
+
+                right: 15px;
+
+                bottom: 15px;
+
+                font-size: 27px;
+
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- ===== PORTADA ===== -->
+
+    <!-- =========================
+         PORTADA
+    ========================= -->
 
     <header>
 
-        <img
-            src="WhatsApp%20Image%202026-08-24%20at%205.34.28%20PM.jpeg"
-            alt="Pinky's Furniture"
-            class="logo">
 
-        <h1>Pinky's Furniture</h1>
+        <img
+
+            src="WhatsApp%20Image%202026-08-24%20at%205.34.28%20PM.jpeg"
+
+            alt="Pinky's Furniture"
+
+            class="logo"
+
+
+        >
+
+
+        <h1>
+            Pinky's Furniture
+        </h1>
+
 
         <p>
             Muebles y soluciones para tu negocio
         </p>
 
+
+        <!-- BOTÓN PRINCIPAL WHATSAPP -->
+
+        <a
+
+            class="portada-whatsapp"
+
+            href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20productos."
+
+            target="_blank"
+
+        >
+
+            💬 COTIZA POR WHATSAPP
+
+        </a>
+
+
     </header>
 
 
-    <!-- ===== CONTENIDO ===== -->
+
+    <!-- =========================
+         CONTENIDO
+    ========================= -->
 
     <main class="contenedor">
 
 
-        <!-- CATÁLOGO -->
+        <!-- =========================
+             CATÁLOGO
+        ========================= -->
 
         <section class="catalogo">
+
 
             <h2>
                 🪑 Nuestro Catálogo
             </h2>
 
+
             <p>
-                Descubre nuestra colección de muebles,
-                sillas y equipamiento para restaurantes,
-                negocios y hogares.
+
+                Descubre nuestra colección
+                de muebles, sillas y equipamiento
+                para restaurantes, negocios
+                y hogares.
+
             </p>
 
+
             <a
+
                 href="CATALOGO_PINKYS_FURNITURE_ACTUALIZADO.pdf"
+
                 target="_blank"
-                class="boton-catalogo">
+
+                class="boton-catalogo"
+
+            >
 
                 📖 VER CATÁLOGO COMPLETO
 
             </a>
 
+
         </section>
 
 
-        <!-- PRODUCTOS -->
+
+        <!-- =========================
+             PRODUCTOS
+        ========================= -->
 
         <h2 class="titulo-productos">
+
             Nuestros productos
+
         </h2>
 
 
@@ -271,104 +664,193 @@
 
             <div class="producto">
 
+
                 <div class="producto-icono">
+
                     🪑
+
                 </div>
 
+
                 <h3>
+
                     Sillas
+
                 </h3>
 
+
                 <p>
+
                     Sillas para restaurantes,
-                    negocios y diferentes espacios.
+                    negocios y diferentes
+                    espacios.
+
                 </p>
 
-                <a
-                    class="boton-whatsapp"
-                    href="https://wa.me/569XXXXXXXX">
 
-                    Consultar por WhatsApp
+                <a
+
+                    class="boton-whatsapp"
+
+                    href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20sillas."
+
+                    target="_blank"
+
+                >
+
+                    Consultar
 
                 </a>
 
+
             </div>
+
 
 
             <!-- MESAS -->
 
             <div class="producto">
 
+
                 <div class="producto-icono">
+
                     🪵
+
                 </div>
 
+
                 <h3>
+
                     Mesas
+
                 </h3>
 
+
                 <p>
+
                     Mesas para restaurantes,
                     comercios y proyectos.
+
                 </p>
 
-                <a
-                    class="boton-whatsapp"
-                    href="https://wa.me/569XXXXXXXX">
 
-                    Consultar por WhatsApp
+                <a
+
+                    class="boton-whatsapp"
+
+                    href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20mesas."
+
+                    target="_blank"
+
+                >
+
+                    Consultar
 
                 </a>
 
+
             </div>
+
 
 
             <!-- MUEBLES -->
 
             <div class="producto">
 
+
                 <div class="producto-icono">
+
                     🛋️
+
                 </div>
 
+
                 <h3>
+
                     Muebles
+
                 </h3>
 
+
                 <p>
+
                     Soluciones de mobiliario
                     para hogares y negocios.
+
                 </p>
 
-                <a
-                    class="boton-whatsapp"
-                    href="https://wa.me/569XXXXXXXX">
 
-                    Consultar por WhatsApp
+                <a
+
+                    class="boton-whatsapp"
+
+                    href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20muebles."
+
+                    target="_blank"
+
+                >
+
+                    Consultar
 
                 </a>
+
 
             </div>
 
 
         </section>
 
+
     </main>
 
 
-    <!-- ===== PIE DE PÁGINA ===== -->
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================= -->
 
     <footer>
 
-        <p>
-            © 2026 Pinky's Furniture
-        </p>
 
         <p>
-            Muebles y equipamiento para tu negocio
+
+            © 2026 Pinky's Furniture
+
         </p>
+
+
+        <p>
+
+            Muebles y equipamiento para tu negocio
+
+        </p>
+
 
     </footer>
 
+
+
+    <!-- =========================
+         WHATSAPP FLOTANTE
+    ========================= -->
+
+    <a
+
+        class="whatsapp-flotante"
+
+        href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20información%20sobre%20sus%20productos."
+
+        target="_blank"
+
+        aria-label="Contactar por WhatsApp"
+
+    >
+
+        💬
+
+    </a>
+
+
 </body>
+
 </html>
