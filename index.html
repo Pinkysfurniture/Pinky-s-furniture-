@@ -181,6 +181,93 @@
             background: #e85b9d;
         }
 
+        /* ==========================================
+           ===== BARRA DE BÚSQUEDA =====
+           ========================================== */
+
+        .buscador {
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .buscador h2 {
+            color: #e85b9d;
+            margin: 0 0 20px;
+            font-size: 30px;
+        }
+
+        .barra-busqueda {
+            position: relative;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .barra-busqueda input {
+            width: 100%;
+            padding: 17px 55px 17px 22px;
+            border: 2px solid #f0b0cd;
+            border-radius: 35px;
+            font-size: 17px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .barra-busqueda input:focus {
+            border-color: #e85b9d;
+            box-shadow: 0 0 10px rgba(232,91,157,0.2);
+        }
+
+        .icono-busqueda {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #e85b9d;
+        }
+
+        /* ===== FILTROS ===== */
+
+        .filtros {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .filtro {
+            border: none;
+            padding: 11px 20px;
+            border-radius: 25px;
+            background: #f5d4e3;
+            color: #555;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .filtro:hover {
+            background: #efb1cf;
+        }
+
+        .filtro.activo {
+            background: #e85b9d;
+            color: white;
+        }
+
+        /* ===== RESULTADOS ===== */
+
+        .resultado-busqueda {
+            margin-top: 20px;
+            color: #777;
+            font-size: 15px;
+        }
+
         /* ===== CATÁLOGO ===== */
 
         .catalogo {
@@ -264,8 +351,6 @@
             line-height: 1.6;
         }
 
-        /* ===== BOTONES WHATSAPP ===== */
-
         .boton-whatsapp {
             display: inline-block;
             margin-top: 15px;
@@ -275,6 +360,33 @@
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
+        }
+
+        /* ===== PRODUCTOS OCULTOS ===== */
+
+        .producto.oculto {
+            display: none;
+        }
+
+        /* ===== MENSAJE SIN RESULTADOS ===== */
+
+        .sin-resultados {
+            display: none;
+            text-align: center;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            color: #777;
+            margin-top: 25px;
+        }
+
+        .sin-resultados.mostrar {
+            display: block;
+        }
+
+        .sin-resultados strong {
+            color: #e85b9d;
+            font-size: 22px;
         }
 
         /* ===== WHATSAPP FLOTANTE ===== */
@@ -351,6 +463,24 @@
             .contenedor {
                 padding: 30px 15px;
             }
+
+            .buscador {
+                padding: 25px 15px;
+            }
+
+            .buscador h2 {
+                font-size: 25px;
+            }
+
+            .barra-busqueda input {
+                font-size: 16px;
+                padding: 15px 50px 15px 18px;
+            }
+
+            .filtro {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -387,7 +517,7 @@
 
     <main class="contenedor">
 
-        <!-- ===== GALERÍA DE PRODUCTOS ===== -->
+        <!-- ===== GALERÍA ===== -->
 
         <section class="galeria">
 
@@ -536,6 +666,70 @@
         </section>
 
 
+        <!-- ==========================================
+             ===== BUSCADOR DE PRODUCTOS =====
+             ========================================== -->
+
+        <section class="buscador">
+
+            <h2>
+                🔎 Busca nuestros productos
+            </h2>
+
+            <div class="barra-busqueda">
+
+                <input
+                    type="text"
+                    id="busqueda"
+                    placeholder="Busca sillas, mesas, muebles..."
+                    oninput="buscarProductos()"
+                >
+
+                <span class="icono-busqueda">
+                    🔍
+                </span>
+
+            </div>
+
+
+            <div class="filtros">
+
+                <button
+                    class="filtro activo"
+                    onclick="filtrarCategoria('todos', this)">
+                    Todos
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarCategoria('sillas', this)">
+                    🪑 Sillas
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarCategoria('mesas', this)">
+                    🪵 Mesas
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarCategoria('muebles', this)">
+                    🛋️ Muebles
+                </button>
+
+            </div>
+
+
+            <div
+                class="resultado-busqueda"
+                id="resultadoBusqueda">
+                Mostrando todos nuestros productos
+            </div>
+
+        </section>
+
+
         <!-- ===== CATÁLOGO PDF ===== -->
 
         <section class="catalogo">
@@ -561,16 +755,22 @@
         </section>
 
 
-        <!-- ===== CATEGORÍAS ===== -->
+        <!-- ===== PRODUCTOS ===== -->
 
         <h2 class="titulo-productos">
             Nuestros productos
         </h2>
 
 
-        <section class="productos">
+        <section class="productos" id="listaProductos">
 
-            <div class="producto">
+
+            <!-- ===== SILLAS ===== -->
+
+            <div
+                class="producto"
+                data-categoria="sillas"
+                data-busqueda="sillas silla restaurante negocio comedor mobiliario">
 
                 <div class="producto-icono">
                     🪑
@@ -596,7 +796,12 @@
             </div>
 
 
-            <div class="producto">
+            <!-- ===== MESAS ===== -->
+
+            <div
+                class="producto"
+                data-categoria="mesas"
+                data-busqueda="mesas mesa restaurante negocio comedor mobiliario">
 
                 <div class="producto-icono">
                     🪵
@@ -622,7 +827,12 @@
             </div>
 
 
-            <div class="producto">
+            <!-- ===== MUEBLES ===== -->
+
+            <div
+                class="producto"
+                data-categoria="muebles"
+                data-busqueda="muebles mueble mobiliario hogar negocio restaurante equipamiento">
 
                 <div class="producto-icono">
                     🛋️
@@ -647,7 +857,27 @@
 
             </div>
 
+
         </section>
+
+
+        <!-- ===== SIN RESULTADOS ===== -->
+
+        <div
+            class="sin-resultados"
+            id="sinResultados">
+
+            <strong>
+                😔 No encontramos productos
+            </strong>
+
+            <p>
+                Intenta buscar con otra palabra
+                o selecciona otra categoría.
+            </p>
+
+        </div>
+
 
     </main>
 
@@ -679,9 +909,15 @@
     </a>
 
 
-    <!-- ===== JAVASCRIPT DEL CARRUSEL ===== -->
+    <!-- ==========================================
+         ===== JAVASCRIPT =====
+         ========================================== -->
 
     <script>
+
+        /* ==========================================
+           CARRUSEL
+           ========================================== */
 
         let slideActual = 0;
 
@@ -716,15 +952,11 @@
                 .classList.add("activa");
 
 
-            /*
-             * Los indicadores son decorativos.
-             * Solo mostramos los primeros 10
-             * para evitar llenar la pantalla.
-             */
-
             if (puntos[slideActual]) {
+
                 puntos[slideActual]
                     .classList.add("activo");
+
             }
 
         }
@@ -744,7 +976,9 @@
             slideActual++;
 
             if (slideActual >= slides.length) {
+
                 slideActual = 0;
+
             }
 
             mostrarSlide(slideActual);
@@ -752,14 +986,170 @@
         }
 
 
-        /*
-         * Cambia automáticamente cada 3 segundos
-         */
-
         setInterval(
             siguienteAutomatico,
             3000
         );
+
+
+        /* ==========================================
+           BUSCADOR Y FILTROS
+           ========================================== */
+
+        let categoriaActual = "todos";
+
+
+        function buscarProductos() {
+
+            const texto =
+                document
+                    .getElementById("busqueda")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            const productos =
+                document.querySelectorAll(".producto");
+
+            let encontrados = 0;
+
+
+            productos.forEach(producto => {
+
+                const categoria =
+                    producto.dataset.categoria;
+
+                const contenido =
+                    producto.dataset.busqueda
+                    .toLowerCase();
+
+
+                const coincideTexto =
+                    contenido.includes(texto);
+
+
+                const coincideCategoria =
+                    categoriaActual === "todos" ||
+                    categoria === categoriaActual;
+
+
+                if (
+                    coincideTexto &&
+                    coincideCategoria
+                ) {
+
+                    producto.classList.remove("oculto");
+
+                    encontrados++;
+
+                } else {
+
+                    producto.classList.add("oculto");
+
+                }
+
+            });
+
+
+            mostrarResultado(
+                encontrados,
+                texto
+            );
+
+        }
+
+
+        function filtrarCategoria(
+            categoria,
+            boton
+        ) {
+
+            categoriaActual = categoria;
+
+
+            document
+                .querySelectorAll(".filtro")
+                .forEach(
+                    filtro =>
+                        filtro.classList.remove("activo")
+                );
+
+
+            boton.classList.add("activo");
+
+
+            buscarProductos();
+
+        }
+
+
+        function mostrarResultado(
+            cantidad,
+            texto
+        ) {
+
+            const resultado =
+                document.getElementById(
+                    "resultadoBusqueda"
+                );
+
+            const sinResultados =
+                document.getElementById(
+                    "sinResultados"
+                );
+
+
+            if (cantidad === 0) {
+
+                resultado.textContent =
+                    "No se encontraron productos.";
+
+                sinResultados.classList.add(
+                    "mostrar"
+                );
+
+                return;
+
+            }
+
+
+            sinResultados.classList.remove(
+                "mostrar"
+            );
+
+
+            if (texto !== "") {
+
+                resultado.textContent =
+                    cantidad +
+                    (
+                        cantidad === 1
+                            ? " producto encontrado"
+                            : " productos encontrados"
+                    );
+
+            } else {
+
+                if (
+                    categoriaActual ===
+                    "todos"
+                ) {
+
+                    resultado.textContent =
+                        "Mostrando todos nuestros productos";
+
+                } else {
+
+                    resultado.textContent =
+                        "Mostrando productos de la categoría seleccionada";
+
+                }
+
+            }
+
+        }
+
 
     </script>
 
