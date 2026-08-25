@@ -8,6 +8,7 @@
     <title>Pinky's Furniture | Muebles y equipamiento</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -19,9 +20,12 @@
             color: #222;
         }
 
-        /* ===== PORTADA ===== */
+        /* =========================
+           PORTADA
+        ========================= */
 
         header {
+            position: relative;
             background: linear-gradient(135deg, #e85b9d, #f28abb);
             color: white;
             text-align: center;
@@ -48,7 +52,59 @@
             margin: 12px 0 0;
         }
 
-        /* ===== WHATSAPP PRINCIPAL ===== */
+
+        /* =========================
+           BUSCADOR SUPERIOR
+        ========================= */
+
+        .buscador-superior {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            z-index: 20;
+        }
+
+        .barra-superior {
+            position: relative;
+            width: 270px;
+        }
+
+        .barra-superior input {
+            width: 100%;
+            padding: 13px 45px 13px 18px;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            font-size: 15px;
+            background: white;
+            color: #333;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.18);
+        }
+
+        .barra-superior input::placeholder {
+            color: #888;
+        }
+
+        .barra-superior input:focus {
+            box-shadow:
+                0 0 0 3px rgba(255,255,255,0.45),
+                0 5px 18px rgba(0,0,0,0.18);
+        }
+
+        .icono-busqueda {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #e85b9d;
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           WHATSAPP PRINCIPAL
+        ========================= */
 
         .portada-whatsapp {
             display: inline-block;
@@ -68,7 +124,10 @@
             transform: translateY(-3px);
         }
 
-        /* ===== CONTENEDOR ===== */
+
+        /* =========================
+           CONTENEDOR
+        ========================= */
 
         .contenedor {
             max-width: 1200px;
@@ -76,7 +135,10 @@
             padding: 40px 20px;
         }
 
-        /* ===== CARRUSEL ===== */
+
+        /* =========================
+           CARRUSEL
+        ========================= */
 
         .galeria {
             background: white;
@@ -123,6 +185,7 @@
         }
 
         @keyframes aparecer {
+
             from {
                 opacity: 0;
             }
@@ -130,9 +193,13 @@
             to {
                 opacity: 1;
             }
+
         }
 
-        /* ===== FLECHAS ===== */
+
+        /* =========================
+           FLECHAS
+        ========================= */
 
         .flecha {
             position: absolute;
@@ -161,7 +228,10 @@
             right: 15px;
         }
 
-        /* ===== INDICADORES ===== */
+
+        /* =========================
+           INDICADORES
+        ========================= */
 
         .indicadores {
             text-align: center;
@@ -181,94 +251,10 @@
             background: #e85b9d;
         }
 
-        /* ==========================================
-           ===== BARRA DE BÚSQUEDA =====
-           ========================================== */
 
-        .buscador {
-            background: white;
-            padding: 30px;
-            border-radius: 22px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .buscador h2 {
-            color: #e85b9d;
-            margin: 0 0 20px;
-            font-size: 30px;
-        }
-
-        .barra-busqueda {
-            position: relative;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .barra-busqueda input {
-            width: 100%;
-            padding: 17px 55px 17px 22px;
-            border: 2px solid #f0b0cd;
-            border-radius: 35px;
-            font-size: 17px;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .barra-busqueda input:focus {
-            border-color: #e85b9d;
-            box-shadow: 0 0 10px rgba(232,91,157,0.2);
-        }
-
-        .icono-busqueda {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: #e85b9d;
-        }
-
-        /* ===== FILTROS ===== */
-
-        .filtros {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 22px;
-        }
-
-        .filtro {
-            border: none;
-            padding: 11px 20px;
-            border-radius: 25px;
-            background: #f5d4e3;
-            color: #555;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .filtro:hover {
-            background: #efb1cf;
-        }
-
-        .filtro.activo {
-            background: #e85b9d;
-            color: white;
-        }
-
-        /* ===== RESULTADOS ===== */
-
-        .resultado-busqueda {
-            margin-top: 20px;
-            color: #777;
-            font-size: 15px;
-        }
-
-        /* ===== CATÁLOGO ===== */
+        /* =========================
+           CATÁLOGO PDF
+        ========================= */
 
         .catalogo {
             text-align: center;
@@ -309,12 +295,15 @@
             transform: translateY(-2px);
         }
 
-        /* ===== PRODUCTOS ===== */
+
+        /* =========================
+           PRODUCTOS
+        ========================= */
 
         .titulo-productos {
             text-align: center;
             font-size: 34px;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
         .productos {
@@ -351,6 +340,11 @@
             line-height: 1.6;
         }
 
+
+        /* =========================
+           BOTONES WHATSAPP
+        ========================= */
+
         .boton-whatsapp {
             display: inline-block;
             margin-top: 15px;
@@ -362,22 +356,68 @@
             font-weight: bold;
         }
 
-        /* ===== PRODUCTOS OCULTOS ===== */
+
+        /* =========================
+           FILTROS
+        ========================= */
+
+        .filtros {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .filtro {
+            border: none;
+            padding: 11px 20px;
+            border-radius: 25px;
+            background: #f5d4e3;
+            color: #555;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .filtro:hover {
+            background: #efb1cf;
+        }
+
+        .filtro.activo {
+            background: #e85b9d;
+            color: white;
+        }
+
+
+        /* =========================
+           PRODUCTOS OCULTOS
+        ========================= */
 
         .producto.oculto {
             display: none;
         }
 
-        /* ===== MENSAJE SIN RESULTADOS ===== */
+
+        /* =========================
+           RESULTADOS
+        ========================= */
+
+        .resultado-busqueda {
+            text-align: center;
+            color: #777;
+            margin-top: -20px;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
 
         .sin-resultados {
             display: none;
             text-align: center;
             background: white;
-            padding: 35px;
+            padding: 40px 20px;
             border-radius: 20px;
-            color: #777;
-            margin-top: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
         }
 
         .sin-resultados.mostrar {
@@ -385,11 +425,16 @@
         }
 
         .sin-resultados strong {
+            display: block;
             color: #e85b9d;
-            font-size: 22px;
+            font-size: 23px;
+            margin-bottom: 10px;
         }
 
-        /* ===== WHATSAPP FLOTANTE ===== */
+
+        /* =========================
+           WHATSAPP FLOTANTE
+        ========================= */
 
         .whatsapp-flotante {
             position: fixed;
@@ -409,7 +454,10 @@
             z-index: 999;
         }
 
-        /* ===== FOOTER ===== */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #222;
@@ -423,9 +471,16 @@
             margin: 5px;
         }
 
-        /* ===== CELULAR ===== */
+
+        /* =========================
+           CELULAR
+        ========================= */
 
         @media (max-width: 600px) {
+
+            header {
+                padding-top: 85px;
+            }
 
             header h1 {
                 font-size: 32px;
@@ -437,6 +492,24 @@
 
             .logo {
                 width: 150px;
+            }
+
+            .buscador-superior {
+                position: absolute;
+                top: 18px;
+                left: 20px;
+                right: 20px;
+            }
+
+            .barra-superior {
+                width: 100%;
+                max-width: 360px;
+                margin: auto;
+            }
+
+            .barra-superior input {
+                padding: 12px 42px 12px 17px;
+                font-size: 14px;
             }
 
             .carrusel {
@@ -464,33 +537,50 @@
                 padding: 30px 15px;
             }
 
-            .buscador {
-                padding: 25px 15px;
-            }
-
-            .buscador h2 {
-                font-size: 25px;
-            }
-
-            .barra-busqueda input {
-                font-size: 16px;
-                padding: 15px 50px 15px 18px;
-            }
-
             .filtro {
                 padding: 10px 15px;
                 font-size: 14px;
             }
+
         }
+
     </style>
 </head>
 
 
 <body>
 
-    <!-- ===== PORTADA ===== -->
+
+    <!-- =========================
+         PORTADA
+    ========================= -->
 
     <header>
+
+
+        <!-- BUSCADOR -->
+
+        <div class="buscador-superior">
+
+            <div class="barra-superior">
+
+                <input
+                    type="text"
+                    id="busqueda"
+                    placeholder="Buscar productos..."
+                    oninput="buscarProductos()"
+                >
+
+                <span class="icono-busqueda">
+                    🔍
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGO -->
 
         <img
             src="WhatsApp%20Image%202026-08-24%20at%205.34.28%20PM.jpeg"
@@ -498,11 +588,16 @@
             class="logo"
         >
 
-        <h1>Pinky's Furniture</h1>
+
+        <h1>
+            Pinky's Furniture
+        </h1>
+
 
         <p>
             Muebles y soluciones para tu negocio
         </p>
+
 
         <a
             class="portada-whatsapp"
@@ -512,12 +607,17 @@
             💬 COTIZA POR WHATSAPP
         </a>
 
+
     </header>
+
 
 
     <main class="contenedor">
 
-        <!-- ===== GALERÍA ===== -->
+
+        <!-- =========================
+             GALERÍA
+        ========================= -->
 
         <section class="galeria">
 
@@ -525,7 +625,9 @@
                 ✨ Conoce nuestros productos
             </h2>
 
+
             <div class="carrusel">
+
 
                 <button
                     class="flecha anterior"
@@ -666,71 +768,10 @@
         </section>
 
 
-        <!-- ==========================================
-             ===== BUSCADOR DE PRODUCTOS =====
-             ========================================== -->
 
-        <section class="buscador">
-
-            <h2>
-                🔎 Busca nuestros productos
-            </h2>
-
-            <div class="barra-busqueda">
-
-                <input
-                    type="text"
-                    id="busqueda"
-                    placeholder="Busca sillas, mesas, muebles..."
-                    oninput="buscarProductos()"
-                >
-
-                <span class="icono-busqueda">
-                    🔍
-                </span>
-
-            </div>
-
-
-            <div class="filtros">
-
-                <button
-                    class="filtro activo"
-                    onclick="filtrarCategoria('todos', this)">
-                    Todos
-                </button>
-
-                <button
-                    class="filtro"
-                    onclick="filtrarCategoria('sillas', this)">
-                    🪑 Sillas
-                </button>
-
-                <button
-                    class="filtro"
-                    onclick="filtrarCategoria('mesas', this)">
-                    🪵 Mesas
-                </button>
-
-                <button
-                    class="filtro"
-                    onclick="filtrarCategoria('muebles', this)">
-                    🛋️ Muebles
-                </button>
-
-            </div>
-
-
-            <div
-                class="resultado-busqueda"
-                id="resultadoBusqueda">
-                Mostrando todos nuestros productos
-            </div>
-
-        </section>
-
-
-        <!-- ===== CATÁLOGO PDF ===== -->
+        <!-- =========================
+             CATÁLOGO
+        ========================= -->
 
         <section class="catalogo">
 
@@ -755,22 +796,70 @@
         </section>
 
 
-        <!-- ===== PRODUCTOS ===== -->
+
+        <!-- =========================
+             FILTROS
+        ========================= -->
+
+        <div class="filtros">
+
+            <button
+                class="filtro activo"
+                onclick="filtrarCategoria('todos', this)">
+                Todos
+            </button>
+
+            <button
+                class="filtro"
+                onclick="filtrarCategoria('sillas', this)">
+                🪑 Sillas
+            </button>
+
+            <button
+                class="filtro"
+                onclick="filtrarCategoria('mesas', this)">
+                🪵 Mesas
+            </button>
+
+            <button
+                class="filtro"
+                onclick="filtrarCategoria('muebles', this)">
+                🛋️ Muebles
+            </button>
+
+        </div>
+
+
+        <div
+            class="resultado-busqueda"
+            id="resultadoBusqueda">
+
+            Mostrando todos nuestros productos
+
+        </div>
+
+
+
+        <!-- =========================
+             PRODUCTOS
+        ========================= -->
 
         <h2 class="titulo-productos">
             Nuestros productos
         </h2>
 
 
-        <section class="productos" id="listaProductos">
+        <section
+            class="productos"
+            id="listaProductos">
 
 
-            <!-- ===== SILLAS ===== -->
+            <!-- SILLAS -->
 
             <div
                 class="producto"
                 data-categoria="sillas"
-                data-busqueda="sillas silla restaurante negocio comedor mobiliario">
+                data-busqueda="sillas silla restaurante restaurante negocio comedor mobiliario">
 
                 <div class="producto-icono">
                     🪑
@@ -796,7 +885,7 @@
             </div>
 
 
-            <!-- ===== MESAS ===== -->
+            <!-- MESAS -->
 
             <div
                 class="producto"
@@ -827,7 +916,7 @@
             </div>
 
 
-            <!-- ===== MUEBLES ===== -->
+            <!-- MUEBLES -->
 
             <div
                 class="producto"
@@ -861,7 +950,9 @@
         </section>
 
 
-        <!-- ===== SIN RESULTADOS ===== -->
+        <!-- =========================
+             SIN RESULTADOS
+        ========================= -->
 
         <div
             class="sin-resultados"
@@ -882,7 +973,10 @@
     </main>
 
 
-    <!-- ===== FOOTER ===== -->
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
@@ -897,7 +991,10 @@
     </footer>
 
 
-    <!-- ===== WHATSAPP FLOTANTE ===== -->
+
+    <!-- =========================
+         WHATSAPP FLOTANTE
+    ========================= -->
 
     <a
         class="whatsapp-flotante"
@@ -909,15 +1006,17 @@
     </a>
 
 
-    <!-- ==========================================
-         ===== JAVASCRIPT =====
-         ========================================== -->
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
-        /* ==========================================
+
+        /* =========================
            CARRUSEL
-           ========================================== */
+        ========================= */
 
         let slideActual = 0;
 
@@ -931,20 +1030,28 @@
         function mostrarSlide(numero) {
 
             slides.forEach(
-                slide => slide.classList.remove("activa")
+                slide =>
+                    slide.classList.remove("activa")
             );
 
             puntos.forEach(
-                punto => punto.classList.remove("activo")
+                punto =>
+                    punto.classList.remove("activo")
             );
 
 
             if (numero >= slides.length) {
+
                 slideActual = 0;
+
             }
 
+
             if (numero < 0) {
-                slideActual = slides.length - 1;
+
+                slideActual =
+                    slides.length - 1;
+
             }
 
 
@@ -992,9 +1099,10 @@
         );
 
 
-        /* ==========================================
-           BUSCADOR Y FILTROS
-           ========================================== */
+
+        /* =========================
+           BÚSQUEDA
+        ========================= */
 
         let categoriaActual = "todos";
 
@@ -1012,6 +1120,7 @@
             const productos =
                 document.querySelectorAll(".producto");
 
+
             let encontrados = 0;
 
 
@@ -1020,9 +1129,10 @@
                 const categoria =
                     producto.dataset.categoria;
 
+
                 const contenido =
                     producto.dataset.busqueda
-                    .toLowerCase();
+                        .toLowerCase();
 
 
                 const coincideTexto =
@@ -1039,13 +1149,17 @@
                     coincideCategoria
                 ) {
 
-                    producto.classList.remove("oculto");
+                    producto.classList.remove(
+                        "oculto"
+                    );
 
                     encontrados++;
 
                 } else {
 
-                    producto.classList.add("oculto");
+                    producto.classList.add(
+                        "oculto"
+                    );
 
                 }
 
@@ -1060,6 +1174,11 @@
         }
 
 
+
+        /* =========================
+           FILTROS
+        ========================= */
+
         function filtrarCategoria(
             categoria,
             boton
@@ -1072,7 +1191,9 @@
                 .querySelectorAll(".filtro")
                 .forEach(
                     filtro =>
-                        filtro.classList.remove("activo")
+                        filtro.classList.remove(
+                            "activo"
+                        )
                 );
 
 
@@ -1084,6 +1205,11 @@
         }
 
 
+
+        /* =========================
+           RESULTADOS
+        ========================= */
+
         function mostrarResultado(
             cantidad,
             texto
@@ -1093,6 +1219,7 @@
                 document.getElementById(
                     "resultadoBusqueda"
                 );
+
 
             const sinResultados =
                 document.getElementById(
