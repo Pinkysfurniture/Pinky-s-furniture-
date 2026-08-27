@@ -3,373 +3,465 @@
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Pinky's Furniture | Muebles y Decoración</title>
-
-    <meta name="description"
-          content="Pinky's Furniture - Sillas, sitiales, mesas y muebles en Santiago.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f8f7f5;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #eee;
-        }
-
-        .nav-container {
-            min-height: 75px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #222;
-        }
-
-        .logo span {
-            color: #b78b72;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 15px;
-        }
-
-        nav a:hover {
-            color: #b78b72;
-        }
-
-        /* =========================
-           BOTONES
-        ========================= */
-
-        .btn {
-            display: inline-block;
-            padding: 13px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: .3s;
-            font-size: 15px;
-        }
-
-        .btn-primary {
-            background: #222;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #b78b72;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            opacity: .85;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            background: #f8f7f5;
-        }
-
-        .hero-content {
-            max-width: 850px;
-            margin: auto;
-            padding: 80px 0;
-        }
-
-        .eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 13px;
-            color: #b78b72;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 70px);
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #b78b72;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        /* =========================
-           SECCIONES
-        ========================= */
-
-        section {
-            padding: 85px 0;
-        }
-
-        .section-head {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-head h2 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .section-head p {
-            color: #777;
-        }
-
-        /* =========================
-           CATÁLOGOS
-        ========================= */
-
-        #productos {
-            background: white;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #eee;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,.06);
-            transition: .3s;
-            text-align: center;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.10);
-        }
-
-        .product-img {
-            height: 240px;
-            background: #eee8e3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-img span {
-            font-size: 75px;
-        }
-
-        .card-body {
-            padding: 30px 25px 35px;
-        }
-
-        .card-body h3 {
-            font-size: 25px;
-            margin-bottom: 12px;
-        }
-
-        .card-body p {
-            color: #777;
-            margin-bottom: 25px;
-        }
-
-        /* =========================
-           SOBRE NOSOTROS
-        ========================= */
-
-        .about {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .about-box {
-            min-height: 350px;
-            border-radius: 20px;
-            background: #e9dfd8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 100px;
-        }
-
-        /* =========================
-           CONTACTO
-        ========================= */
-
-        .contact {
-            background: #222;
-            color: white;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .contact p {
-            color: #ddd;
-            margin-bottom: 30px;
-        }
-
-        /* =========================
-           WHATSAPP
-        ========================= */
-
-        .whatsapp-floating {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 62px;
-            height: 62px;
-            border-radius: 50%;
-            background: #25D366;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            text-decoration: none;
-            box-shadow: 0 5px 20px rgba(0,0,0,.25);
-            z-index: 9999;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #111;
-            color: #aaa;
-            text-align: center;
-            padding: 25px;
-            font-size: 14px;
-        }
-
-        /* =========================
-           CELULAR
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                display: none;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            section {
-                padding: 60px 0;
-            }
-
-            .hero-content {
-                padding: 60px 0;
-            }
-
-            .section-head h2,
-            .about h2,
-            .contact h2 {
-                font-size: 32px;
-            }
-
-            .product-img {
-                height: 200px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pinky's Furniture | Muebles y equipamiento</title>
+
+<style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff7fb;
+    color: #222;
+}
+
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+header {
+    background: linear-gradient(135deg, #e85b9d, #f28abb);
+    color: white;
+    text-align: center;
+    padding: 40px 20px 50px;
+}
+
+.logo {
+    width: 180px;
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto 18px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 44px;
+}
+
+header p {
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+.buscador-superior {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.barra-busqueda {
+    position: relative;
+    width: 280px;
+}
+
+.barra-busqueda input {
+    width: 100%;
+    height: 45px;
+    padding: 0 45px 0 18px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 15px;
+    background: white;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.barra-busqueda input::placeholder {
+    color: #888;
+}
+
+.barra-busqueda input:focus {
+    box-shadow:
+        0 0 0 3px rgba(232,91,157,0.35),
+        0 4px 15px rgba(0,0,0,0.25);
+}
+
+.icono-busqueda {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #e85b9d;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   WHATSAPP PORTADA
+===================================================== */
+
+.portada-whatsapp {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 16px 30px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+    transition: 0.3s;
+}
+
+.portada-whatsapp:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   CONTENEDOR
+===================================================== */
+
+.contenedor {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+
+/* =====================================================
+   MENÚ CATEGORÍAS
+===================================================== */
+
+.menu-categorias {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.menu-categorias h2 {
+    color: #e85b9d;
+    margin-top: 0;
+}
+
+.botones-categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.boton-categoria {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    background: #f7d4e4;
+    color: #555;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-categoria:hover {
+    background: #e85b9d;
+    color: white;
+}
+
+
+/* =====================================================
+   CARRUSEL
+===================================================== */
+
+.galeria {
+    background: white;
+    padding: 20px;
+    border-radius: 22px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    margin-bottom: 45px;
+}
+
+.galeria h2 {
+    text-align: center;
+    color: #e85b9d;
+    font-size: 34px;
+    margin: 10px 0 25px;
+}
+
+.carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 520px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f7f7f7;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.activa {
+    display: block;
+    animation: aparecer 0.7s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   FLECHAS
+===================================================== */
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(232,91,157,0.9);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.flecha:hover {
+    background: #d94789;
+}
+
+.anterior {
+    left: 15px;
+}
+
+.siguiente {
+    right: 15px;
+}
+
+
+/* =====================================================
+   INDICADORES
+===================================================== */
+
+.indicadores {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.punto {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin: 4px;
+    background: #ddd;
+    border-radius: 50%;
+}
+
+.punto.activo {
+    background: #e85b9d;
+}
+
+
+/* =====================================================
+   CATÁLOGOS POR CATEGORÍA
+===================================================== */
+
+.catalogos-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 50px 0;
+}
+
+.catalogo-categoria {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.catalogo-categoria:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(232,91,157,0.20);
+}
+
+.catalogo-categoria h2 {
+    color: #e85b9d;
+    font-size: 28px;
+    margin-top: 0;
+}
+
+.catalogo-categoria p {
+    color: #555;
+    line-height: 1.6;
+    min-height: 50px;
+}
+
+.boton-catalogo {
+    display: inline-block;
+    background: #e85b9d;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.boton-catalogo:hover {
+    background: #d94789;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   WHATSAPP FLOTANTE
+===================================================== */
+
+.whatsapp-flotante {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 62px;
+    height: 62px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 30px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    z-index: 999;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 28px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media(max-width:800px) {
+
+    .catalogos-categorias {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    header {
+        padding-top: 75px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .buscador-superior {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        left: auto;
+    }
+
+    .barra-busqueda {
+        width: 210px;
+    }
+
+    .barra-busqueda input {
+        height: 40px;
+        font-size: 14px;
+        padding-left: 15px;
+    }
+
+    .carrusel {
+        height: 350px;
+    }
+
+    .galeria h2 {
+        font-size: 28px;
+    }
+
+    .contenedor {
+        padding: 30px 15px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -377,336 +469,342 @@
 <body>
 
 
-<!-- =================================
-     MENÚ
-================================= -->
+<!-- =====================================================
+     PORTADA
+===================================================== -->
 
 <header>
 
-    <div class="container nav-container">
+    <!-- BUSCADOR -->
 
-        <a href="#inicio"
-           class="logo">
+    <div class="buscador-superior">
 
-            Pinky's
-            <span>Furniture</span>
+        <div class="barra-busqueda">
 
-        </a>
+            <input
+                type="text"
+                id="busqueda"
+                placeholder="Buscar productos..."
+            >
 
-        <nav>
+            <span class="icono-busqueda">
+                🔍
+            </span>
 
-            <a href="#inicio">
-                Inicio
-            </a>
-
-            <a href="#productos">
-                Catálogos
-            </a>
-
-            <a href="#nosotros">
-                Nosotros
-            </a>
-
-            <a href="#contacto">
-                Contacto
-            </a>
-
-        </nav>
-
-        <a href="#contacto"
-           class="btn btn-primary">
-
-            Cotizar
-
-        </a>
+        </div>
 
     </div>
+
+
+    <!-- LOGO -->
+
+    <img
+        src="WhatsApp%20Image%202026-08-24%20at%205.34.28%20PM.jpeg"
+        alt="Pinky's Furniture"
+        class="logo"
+    >
+
+
+    <h1>
+        Pinky's Furniture
+    </h1>
+
+
+    <p>
+        Muebles y soluciones para tu negocio
+    </p>
+
+
+    <a
+        class="portada-whatsapp"
+        href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20productos."
+        target="_blank"
+    >
+        💬 COTIZA POR WHATSAPP
+    </a>
 
 </header>
 
 
-<!-- =================================
-     INICIO
-================================= -->
 
-<section id="inicio"
-         class="hero">
+<main class="contenedor">
 
-    <div class="container hero-content">
 
-        <div class="eyebrow">
-            Pinky's Furniture · Santiago
-        </div>
+<!-- =====================================================
+     CATEGORÍAS
+===================================================== -->
 
-        <h1>
+<section class="menu-categorias">
 
-            Tu espacio,
-            <span>con estilo.</span>
+<h2>
+🛍️ Categorías
+</h2>
 
-        </h1>
+<div class="botones-categorias">
 
-        <p>
+<a
+href="#sillas"
+class="boton-categoria">
+🪑 Sillas y Sitiales
+</a>
 
-            Descubre nuestra selección de
-            sillas, sitiales, mesas y muebles.
-            Revisa nuestros catálogos y
-            cotiza directamente con nosotros.
+<a
+href="#mesas"
+class="boton-categoria">
+🪵 Mesas
+</a>
 
-        </p>
+<a
+href="#muebles"
+class="boton-categoria">
+🛋️ Muebles
+</a>
 
-        <div class="hero-buttons">
-
-            <a href="#productos"
-               class="btn btn-primary">
-
-                Ver catálogos
-
-            </a>
-
-            <a
-                href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20hacer%20una%20consulta."
-                target="_blank"
-                class="btn btn-whatsapp">
-
-                WhatsApp
-
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =================================
-     CATÁLOGOS
-================================= -->
 
-<section id="productos">
+<!-- =====================================================
+     CARRUSEL
+===================================================== -->
 
-    <div class="container">
+<section class="galeria">
 
-        <div class="section-head">
-
-            <div class="eyebrow">
-                Pinky's Furniture
-            </div>
-
-            <h2>
-                Nuestros catálogos
-            </h2>
-
-            <p>
-                Selecciona una categoría para
-                consultar sus productos.
-            </p>
-
-        </div>
+<h2>
+✨ Conoce nuestros productos
+</h2>
 
 
-        <div class="products">
+<div class="carrusel">
 
 
-            <!-- =========================
-                 SILLAS Y SITIALES
-            ========================== -->
-
-            <article class="card">
-
-                <div class="product-img">
-
-                    <span>
-                        🪑
-                    </span>
-
-                </div>
-
-                <div class="card-body">
-
-                    <h3>
-                        Sillas y Sitiales
-                    </h3>
-
-                    <p>
-                        Sillas, sitiales y
-                        alternativas para tus espacios.
-                    </p>
-
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        onclick="abrirCatalogoSillas()">
-
-                        Ver catálogo
-
-                    </button>
-
-                </div>
-
-            </article>
+<button
+class="flecha anterior"
+onclick="cambiarSlide(-1)">
+❮
+</button>
 
 
-            <!-- =========================
-                 MESAS
-            ========================== -->
+<div class="slide activa">
+<img src="IMG-20260824-WA0020.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-            <article class="card">
+<div class="slide">
+<img src="IMG-20260824-WA0021.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                <div class="product-img">
+<div class="slide">
+<img src="IMG-20260824-WA0022.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                    <span>
-                        🪵
-                    </span>
+<div class="slide">
+<img src="IMG-20260824-WA0023.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                </div>
+<div class="slide">
+<img src="IMG-20260824-WA0024.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                <div class="card-body">
+<div class="slide">
+<img src="IMG-20260824-WA0025.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                    <h3>
-                        Mesas
-                    </h3>
+<div class="slide">
+<img src="IMG-20260824-WA0026.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                    <p>
-                        Diferentes opciones de mesas
-                        para tus espacios.
-                    </p>
+<div class="slide">
+<img src="IMG-20260824-WA0027.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        onclick="abrirCatalogoMesas()">
+<div class="slide">
+<img src="IMG-20260824-WA0028.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                        Ver catálogo
+<div class="slide">
+<img src="IMG-20260824-WA0029.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                    </button>
+<div class="slide">
+<img src="IMG-20260824-WA0030.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-                </div>
+<div class="slide">
+<img src="IMG-20260824-WA0031.jpg" alt="Producto Pinky's Furniture">
+</div>
 
-            </article>
+<div class="slide">
+<img src="IMG-20260824-WA0032.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0033.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0034.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0035.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0036.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0037.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0038.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0039.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0040.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0041.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0042.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0043.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0044.jpg" alt="Producto Pinky's Furniture">
+</div>
+
+<div class="slide">
+<img src="IMG-20260824-WA0045.jpg" alt="Producto Pinky's Furniture">
+</div>
 
 
-            <!-- =========================
-                 MUEBLES
-            ========================== -->
+<button
+class="flecha siguiente"
+onclick="cambiarSlide(1)">
+❯
+</button>
 
-            <article class="card">
-
-                <div class="product-img">
-
-                    <span>
-                        🛋️
-                    </span>
-
-                </div>
-
-                <div class="card-body">
-
-                    <h3>
-                        Muebles
-                    </h3>
-
-                    <p>
-                        Conoce nuestra selección
-                        de muebles.
-                    </p>
-
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        onclick="abrirCatalogoMuebles()">
-
-                        Ver catálogo
-
-                    </button>
-
-                </div>
-
-            </article>
+</div>
 
 
-        </div>
+<div class="indicadores">
 
-    </div>
+<span class="punto activo"></span>
+<span class="punto"></span>
+<span class="punto"></span>
+<span class="punto"></span>
+<span class="punto"></span>
+<span class="punto"></span>
+<span class="punto"></span>
+<span class="punto"></span>
+<span class="punto"></span>
+<span class="punto"></span>
+
+</div>
 
 </section>
 
 
-<!-- =================================
-     NOSOTROS
-================================= -->
 
-<section id="nosotros">
+<!-- =====================================================
+     CATÁLOGOS INDIVIDUALES
+===================================================== -->
 
-    <div class="container about">
-
-        <div>
-
-            <div class="eyebrow">
-                Sobre nosotros
-            </div>
-
-            <h2>
-                Pinky's Furniture
-            </h2>
-
-            <p>
-                Somos un emprendimiento dedicado
-                a la comercialización de muebles
-                para distintos espacios.
-            </p>
-
-            <p>
-                Contamos con sillas, sitiales,
-                mesas y muebles para diferentes
-                estilos y necesidades.
-            </p>
-
-            <p>
-                Estamos ubicados en Santiago
-                y atendemos directamente
-                a nuestros clientes por WhatsApp.
-            </p>
-
-        </div>
+<section class="catalogos-categorias">
 
 
-        <div class="about-box">
+    <!-- SILLAS Y SITIALES -->
 
-            🏠
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =================================
-     CONTACTO
-================================= -->
-
-<section id="contacto"
-         class="contact">
-
-    <div class="container">
+    <div
+        class="catalogo-categoria"
+        id="sillas"
+    >
 
         <h2>
-            ¿Buscas un producto?
+            🪑 Sillas y Sitiales
         </h2>
 
         <p>
-            Escríbenos por WhatsApp y
-            solicita tu cotización.
+            Revisa nuestro catálogo completo
+            de sillas y sitiales.
         </p>
 
         <a
-            href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20cotizar%20un%20producto."
+            href="catálogo%20de%20sillas%20y%20sitiales%20.pdf"
             target="_blank"
-            class="btn btn-whatsapp">
+            class="boton-catalogo"
+        >
+            📖 VER CATÁLOGO
+        </a>
 
-            💬 Contactar por WhatsApp
+    </div>
 
+
+
+    <!-- MESAS -->
+
+    <div
+        class="catalogo-categoria"
+        id="mesas"
+    >
+
+        <h2>
+            🪵 Mesas
+        </h2>
+
+        <p>
+            Conoce nuestro catálogo completo
+            de mesas.
+        </p>
+
+        <a
+            href="CATALOGO_PINKYS_MESAS.pdf"
+            target="_blank"
+            class="boton-catalogo"
+        >
+            📖 VER CATÁLOGO
+        </a>
+
+    </div>
+
+
+
+    <!-- MUEBLES -->
+
+    <div
+        class="catalogo-categoria"
+        id="muebles"
+    >
+
+        <h2>
+            🛋️ Muebles
+        </h2>
+
+        <p>
+            Descubre nuestro catálogo completo
+            de muebles.
+        </p>
+
+        <a
+            href="CATALOGO_PINKYS_MUEBLES.pdf"
+            target="_blank"
+            class="boton-catalogo"
+        >
+            📖 VER CATÁLOGO
         </a>
 
     </div>
@@ -714,88 +812,136 @@
 </section>
 
 
-<!-- =================================
-     WHATSAPP FLOTANTE
-================================= -->
 
-<a
-    href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20hacer%20una%20consulta."
-    target="_blank"
-    class="whatsapp-floating"
-    aria-label="WhatsApp">
-
-    💬
-
-</a>
+</main>
 
 
-<!-- =================================
+
+<!-- =====================================================
      FOOTER
-================================= -->
+===================================================== -->
 
 <footer>
 
-    <p>
-        © 2026 Pinky's Furniture
-    </p>
+<p>
+© 2026 Pinky's Furniture
+</p>
 
-    <p>
-        Santiago, Chile
-    </p>
+<p>
+Muebles y equipamiento para tu negocio
+</p>
 
 </footer>
 
 
 
-<!-- =================================
-     COMANDOS DE CADA CATÁLOGO
-================================= -->
+<!-- =====================================================
+     WHATSAPP FLOTANTE
+===================================================== -->
+
+<a
+class="whatsapp-flotante"
+href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20información%20sobre%20sus%20productos."
+target="_blank"
+aria-label="Contactar por WhatsApp"
+>
+💬
+</a>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-    // ==================================
-    // CATÁLOGO DE SILLAS Y SITIALES
-    // ==================================
+/* =====================================================
+   CARRUSEL
+===================================================== */
 
-    function abrirCatalogoSillas() {
+let slideActual = 0;
 
-        window.open(
-            "sillas/catálogo de sillas y sitiales.pdf",
-            "_blank"
-        );
+const slides =
+document.querySelectorAll(".slide");
+
+const puntos =
+document.querySelectorAll(".punto");
+
+
+function mostrarSlide(numero) {
+
+    slides.forEach(slide => {
+
+        slide.classList.remove("activa");
+
+    });
+
+    puntos.forEach(punto => {
+
+        punto.classList.remove("activo");
+
+    });
+
+
+    if(numero >= slides.length) {
+
+        slideActual = 0;
+
+    }
+
+
+    if(numero < 0) {
+
+        slideActual = slides.length - 1;
 
     }
 
 
-    // ==================================
-    // CATÁLOGO DE MESAS
-    // ==================================
+    slides[slideActual]
+        .classList.add("activa");
 
-    function abrirCatalogoMesas() {
 
-        window.open(
-            "mesas/CATALOGO_PINKYS_MESAS_SIN_LOGOS.pdf",
-            "_blank"
-        );
+    if(puntos[slideActual]) {
+
+        puntos[slideActual]
+            .classList.add("activo");
 
     }
 
+}
 
-    // ==================================
-    // CATÁLOGO DE MUEBLES
-    // ==================================
 
-    function abrirCatalogoMuebles() {
+function cambiarSlide(direccion) {
 
-        window.open(
-            "muebles/CATALOGO MUEBLES MAYORISTAS LCDD 04-8-26.pdf",
-            "_blank"
-        );
+    slideActual += direccion;
+
+    mostrarSlide(slideActual);
+
+}
+
+
+function siguienteAutomatico() {
+
+    slideActual++;
+
+    if(slideActual >= slides.length) {
+
+        slideActual = 0;
 
     }
+
+    mostrarSlide(slideActual);
+
+}
+
+
+setInterval(
+    siguienteAutomatico,
+    3000
+);
 
 </script>
-
 
 </body>
 
