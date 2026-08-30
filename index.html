@@ -95,12 +95,6 @@ header p {
     color: #888;
 }
 
-.barra-busqueda input:focus {
-    box-shadow:
-        0 0 0 3px rgba(232,91,157,0.35),
-        0 4px 15px rgba(0,0,0,0.25);
-}
-
 .icono-busqueda {
     position: absolute;
     right: 15px;
@@ -190,118 +184,87 @@ header p {
 
 
 /* =====================================================
-   CARRUSEL
+   PRODUCTOS
 ===================================================== */
 
-.galeria {
-    background: white;
-    padding: 20px;
-    border-radius: 22px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-    margin-bottom: 45px;
+.productos {
+    margin-top: 40px;
 }
 
-.galeria h2 {
+.titulo-productos {
     text-align: center;
     color: #e85b9d;
     font-size: 34px;
-    margin: 10px 0 25px;
+    margin-bottom: 30px;
 }
 
-.carrusel {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    height: 520px;
-    margin: auto;
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.producto {
+    background: white;
+    border-radius: 20px;
     overflow: hidden;
-    border-radius: 18px;
-    background: #f7f7f7;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
-.slide {
-    display: none;
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(232,91,157,0.20);
+}
+
+.producto img {
     width: 100%;
-    height: 100%;
-}
-
-.slide.activa {
-    display: block;
-    animation: aparecer 0.7s ease;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
+    height: 240px;
     object-fit: contain;
-    display: block;
+    background: #f8f8f8;
 }
 
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-
+.producto-info {
+    padding: 20px;
 }
 
+.producto-info h3 {
+    margin-top: 0;
+    color: #333;
+}
 
-/* =====================================================
-   FLECHAS
-===================================================== */
+.codigo {
+    color: #777;
+    font-size: 14px;
+}
 
-.flecha {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(232,91,157,0.9);
-    color: white;
+.precio {
     font-size: 25px;
-    cursor: pointer;
-    z-index: 5;
-}
-
-.flecha:hover {
-    background: #d94789;
-}
-
-.anterior {
-    left: 15px;
-}
-
-.siguiente {
-    right: 15px;
+    font-weight: bold;
+    color: #e85b9d;
+    margin: 15px 0;
 }
 
 
 /* =====================================================
-   INDICADORES
+   BOTÓN COMPRAR
 ===================================================== */
 
-.indicadores {
-    text-align: center;
-    margin-top: 18px;
-}
-
-.punto {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    margin: 4px;
-    background: #ddd;
-    border-radius: 50%;
-}
-
-.punto.activo {
+.boton-comprar {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
     background: #e85b9d;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton-comprar:hover {
+    background: #d94789;
 }
 
 
@@ -361,6 +324,231 @@ header p {
 
 
 /* =====================================================
+   CARRITO
+===================================================== */
+
+.boton-carrito {
+    position: fixed;
+    right: 20px;
+    bottom: 95px;
+    width: 62px;
+    height: 62px;
+    border: none;
+    border-radius: 50%;
+    background: #e85b9d;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    z-index: 999;
+}
+
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #222;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -430px;
+    width: 420px;
+    max-width: 95%;
+    height: 100vh;
+    background: white;
+    z-index: 10000;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.25);
+    transition: 0.35s;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-panel.abierto {
+    right: 0;
+}
+
+.carrito-header {
+    background: linear-gradient(135deg,#e85b9d,#f28abb);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrito-header h2 {
+    margin: 0;
+}
+
+.cerrar-carrito {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.carrito-contenido {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.item-carrito {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.item-carrito h3 {
+    margin: 0 0 8px;
+}
+
+.item-precio {
+    color: #e85b9d;
+    font-weight: bold;
+}
+
+.controles-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.controles-cantidad button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: #f7d4e4;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.eliminar {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: #d33;
+    cursor: pointer;
+}
+
+.carrito-total {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.carrito-total h3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton-continuar {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: #e85b9d;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FORMULARIO
+===================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 20000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.activo {
+    display: flex;
+}
+
+.formulario {
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.formulario h2 {
+    color: #e85b9d;
+    margin-top: 0;
+}
+
+.formulario label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.formulario textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.botones-formulario {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.boton-finalizar {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    background: #25D366;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-cancelar {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    background: #ddd;
+    cursor: pointer;
+}
+
+
+/* =====================================================
    WHATSAPP FLOTANTE
 ===================================================== */
 
@@ -406,6 +594,7 @@ footer p {
 
 @media(max-width:800px) {
 
+    .grid-productos,
     .catalogos-categorias {
         grid-template-columns: 1fr;
     }
@@ -434,7 +623,6 @@ footer p {
         position: fixed;
         top: 10px;
         right: 10px;
-        left: auto;
     }
 
     .barra-busqueda {
@@ -445,14 +633,6 @@ footer p {
         height: 40px;
         font-size: 14px;
         padding-left: 15px;
-    }
-
-    .carrusel {
-        height: 350px;
-    }
-
-    .galeria h2 {
-        font-size: 28px;
     }
 
     .contenedor {
@@ -475,53 +655,49 @@ footer p {
 
 <header>
 
-    <!-- BUSCADOR -->
+<div class="buscador-superior">
 
-    <div class="buscador-superior">
+<div class="barra-busqueda">
 
-        <div class="barra-busqueda">
+<input
+type="text"
+id="busqueda"
+placeholder="Buscar productos..."
+>
 
-            <input
-                type="text"
-                id="busqueda"
-                placeholder="Buscar productos..."
-            >
+<span class="icono-busqueda">
+🔍
+</span>
 
-            <span class="icono-busqueda">
-                🔍
-            </span>
+</div>
 
-        </div>
-
-    </div>
+</div>
 
 
-    <!-- LOGO -->
-
-    <img
-        src="WhatsApp%20Image%202026-08-24%20at%205.34.28%20PM.jpeg"
-        alt="Pinky's Furniture"
-        class="logo"
-    >
+<img
+src="WhatsApp%20Image%202026-08-24%20at%205.34.28%20PM.jpeg"
+alt="Pinky's Furniture"
+class="logo"
+>
 
 
-    <h1>
-        Pinky's Furniture
-    </h1>
+<h1>
+Pinky's Furniture
+</h1>
 
 
-    <p>
-        Muebles y soluciones para tu negocio
-    </p>
+<p>
+Muebles y soluciones para tu negocio
+</p>
 
 
-    <a
-        class="portada-whatsapp"
-        href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20productos."
-        target="_blank"
-    >
-        💬 COTIZA POR WHATSAPP
-    </a>
+<a
+class="portada-whatsapp"
+href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20productos."
+target="_blank"
+>
+💬 COTIZA POR WHATSAPP
+</a>
 
 </header>
 
@@ -567,153 +743,20 @@ class="boton-categoria">
 
 
 <!-- =====================================================
-     CARRUSEL
+     PRODUCTOS
 ===================================================== -->
 
-<section class="galeria">
+<section
+class="productos"
+id="productos">
 
-<h2>
-✨ Conoce nuestros productos
+<h2 class="titulo-productos">
+🛒 Compra nuestros productos
 </h2>
 
-
-<div class="carrusel">
-
-
-<button
-class="flecha anterior"
-onclick="cambiarSlide(-1)">
-❮
-</button>
-
-
-<div class="slide activa">
-<img src="IMG-20260824-WA0020.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0021.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0022.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0023.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0024.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0025.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0026.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0027.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0028.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0029.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0030.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0031.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0032.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0033.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0034.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0035.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0036.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0037.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0038.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0039.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0040.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0041.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0042.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0043.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0044.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-<div class="slide">
-<img src="IMG-20260824-WA0045.jpg" alt="Producto Pinky's Furniture">
-</div>
-
-
-<button
-class="flecha siguiente"
-onclick="cambiarSlide(1)">
-❯
-</button>
-
-</div>
-
-
-<div class="indicadores">
-
-<span class="punto activo"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-
+<div
+class="grid-productos"
+id="listaProductos">
 </div>
 
 </section>
@@ -727,93 +770,297 @@ onclick="cambiarSlide(1)">
 <section class="catalogos-categorias">
 
 
-    <!-- SILLAS Y SITIALES -->
+<div
+class="catalogo-categoria"
+id="sillas">
 
-    <div
-        class="catalogo-categoria"
-        id="sillas"
-    >
+<h2>
+🪑 Sillas y Sitiales
+</h2>
 
-        <h2>
-            🪑 Sillas y Sitiales
-        </h2>
+<p>
+Revisa nuestro catálogo completo
+de sillas y sitiales.
+</p>
 
-        <p>
-            Revisa nuestro catálogo completo
-            de sillas y sitiales.
-        </p>
+<a
+href="catálogo%20de%20sillas%20y%20sitiales%20.pdf"
+target="_blank"
+class="boton-catalogo">
 
-        <a
-            href="catálogo%20de%20sillas%20y%20sitiales%20.pdf"
-            target="_blank"
-            class="boton-catalogo"
-        >
-            📖 VER CATÁLOGO
-        </a>
+📖 VER CATÁLOGO
 
-    </div>
+</a>
+
+</div>
 
 
 
-    <!-- MESAS -->
+<div
+class="catalogo-categoria"
+id="mesas">
 
-    <div
-        class="catalogo-categoria"
-        id="mesas"
-    >
+<h2>
+🪵 Mesas
+</h2>
 
-        <h2>
-            🪵 Mesas
-        </h2>
+<p>
+Conoce nuestro catálogo completo
+de mesas.
+</p>
 
-        <p>
-            Conoce nuestro catálogo completo
-            de mesas.
-        </p>
+<a
+href="CATALOGO_PINKYS_MESAS.pdf"
+target="_blank"
+class="boton-catalogo">
 
-        <a
-            href="CATALOGO_PINKYS_MESAS.pdf"
-            target="_blank"
-            class="boton-catalogo"
-        >
-            📖 VER CATÁLOGO
-        </a>
+📖 VER CATÁLOGO
 
-    </div>
+</a>
+
+</div>
 
 
 
-    <!-- MUEBLES -->
+<div
+class="catalogo-categoria"
+id="muebles">
 
-    <div
-        class="catalogo-categoria"
-        id="muebles"
-    >
+<h2>
+🛋️ Muebles
+</h2>
 
-        <h2>
-            🛋️ Muebles
-        </h2>
+<p>
+Descubre nuestro catálogo completo
+de muebles.
+</p>
 
-        <p>
-            Descubre nuestro catálogo completo
-            de muebles.
-        </p>
+<a
+href="CATALOGO_PINKYS_MUEBLES.pdf"
+target="_blank"
+class="boton-catalogo">
 
-        <a
-            href="CATALOGO_PINKYS_MUEBLES.pdf"
-            target="_blank"
-            class="boton-catalogo"
-        >
-            📖 VER CATÁLOGO
-        </a>
+📖 VER CATÁLOGO
 
-    </div>
+</a>
+
+</div>
 
 </section>
 
 
-
 </main>
+
+
+
+<!-- =====================================================
+     BOTÓN CARRITO
+===================================================== -->
+
+<button
+class="boton-carrito"
+onclick="abrirCarrito()"
+aria-label="Abrir carrito">
+
+🛒
+
+<span
+class="contador-carrito"
+id="contadorCarrito">
+
+0
+
+</span>
+
+</button>
+
+
+
+<!-- =====================================================
+     PANEL CARRITO
+===================================================== -->
+
+<aside
+class="carrito-panel"
+id="carritoPanel">
+
+<div class="carrito-header">
+
+<h2>
+🛒 Mi carrito
+</h2>
+
+<button
+class="cerrar-carrito"
+onclick="cerrarCarrito()">
+
+×
+
+</button>
+
+</div>
+
+
+<div
+class="carrito-contenido"
+id="carritoContenido">
+
+<p>
+Tu carrito está vacío.
+</p>
+
+</div>
+
+
+<div class="carrito-total">
+
+<h3>
+
+<span>
+Total
+</span>
+
+<span id="carritoTotal">
+$0
+</span>
+
+</h3>
+
+
+<button
+class="boton-continuar"
+onclick="abrirFormulario()">
+
+Continuar compra
+
+</button>
+
+</div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     FORMULARIO CLIENTE
+===================================================== -->
+
+<div
+class="modal"
+id="modalFormulario">
+
+<div class="formulario">
+
+<h2>
+📦 Datos del pedido
+</h2>
+
+
+<label>
+Nombre completo
+</label>
+
+<input
+type="text"
+id="nombreCliente"
+placeholder="Tu nombre"
+>
+
+
+<label>
+Teléfono
+</label>
+
+<input
+type="tel"
+id="telefonoCliente"
+placeholder="+56 9..."
+>
+
+
+<label>
+Correo electrónico
+</label>
+
+<input
+type="email"
+id="correoCliente"
+placeholder="correo@ejemplo.com"
+>
+
+
+<label>
+Dirección
+</label>
+
+<input
+type="text"
+id="direccionCliente"
+placeholder="Dirección de entrega"
+>
+
+
+<label>
+Comuna
+</label>
+
+<input
+type="text"
+id="comunaCliente"
+placeholder="Comuna"
+>
+
+
+<label>
+Observaciones
+</label>
+
+<textarea
+id="observacionesCliente"
+placeholder="Información adicional del pedido">
+</textarea>
+
+
+<div class="botones-formulario">
+
+<button
+class="boton-cancelar"
+onclick="cerrarFormulario()">
+
+Cancelar
+
+</button>
+
+
+<button
+class="boton-finalizar"
+onclick="prepararPedido()">
+
+Continuar al pago
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     WHATSAPP FLOTANTE
+===================================================== -->
+
+<a
+class="whatsapp-flotante"
+href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20información%20sobre%20sus%20productos."
+target="_blank"
+aria-label="Contactar por WhatsApp">
+
+💬
+
+</a>
 
 
 
@@ -835,113 +1082,534 @@ Muebles y equipamiento para tu negocio
 
 
 
-<!-- =====================================================
-     WHATSAPP FLOTANTE
-===================================================== -->
-
-<a
-class="whatsapp-flotante"
-href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20información%20sobre%20sus%20productos."
-target="_blank"
-aria-label="Contactar por WhatsApp"
->
-💬
-</a>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
 /* =====================================================
-   CARRUSEL
+   PRODUCTOS DE PRUEBA
 ===================================================== */
 
-let slideActual = 0;
+const productos = [
 
-const slides =
-document.querySelectorAll(".slide");
+{
+    id: 1,
+    nombre: "Producto de prueba 1",
+    codigo: "PRUEBA001",
+    precio: 10000,
+    categoria: "Sillas",
+    imagen: "IMG-20260824-WA0020.jpg"
+},
 
-const puntos =
-document.querySelectorAll(".punto");
+{
+    id: 2,
+    nombre: "Producto de prueba 2",
+    codigo: "PRUEBA002",
+    precio: 20000,
+    categoria: "Mesas",
+    imagen: "IMG-20260824-WA0021.jpg"
+},
+
+{
+    id: 3,
+    nombre: "Producto de prueba 3",
+    codigo: "PRUEBA003",
+    precio: 30000,
+    categoria: "Muebles",
+    imagen: "IMG-20260824-WA0022.jpg"
+}
+
+];
 
 
-function mostrarSlide(numero) {
+/* =====================================================
+   CARRITO
+===================================================== */
 
-    slides.forEach(slide => {
+let carrito = [];
 
-        slide.classList.remove("activa");
+
+/* =====================================================
+   MOSTRAR PRODUCTOS
+===================================================== */
+
+function mostrarProductos(lista = productos) {
+
+    const contenedor =
+        document.getElementById("listaProductos");
+
+    contenedor.innerHTML = "";
+
+
+    lista.forEach(producto => {
+
+        const tarjeta =
+            document.createElement("div");
+
+        tarjeta.className = "producto";
+
+
+        tarjeta.innerHTML = `
+
+            <img
+                src="${producto.imagen}"
+                alt="${producto.nombre}"
+            >
+
+            <div class="producto-info">
+
+                <h3>
+                    ${producto.nombre}
+                </h3>
+
+                <div class="codigo">
+                    Código: ${producto.codigo}
+                </div>
+
+                <div class="precio">
+                    $${formatearPrecio(producto.precio)}
+                </div>
+
+                <button
+                    class="boton-comprar"
+                    onclick="agregarAlCarrito(${producto.id})">
+
+                    🛒 Comprar ahora
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        contenedor.appendChild(tarjeta);
 
     });
 
-    puntos.forEach(punto => {
+}
 
-        punto.classList.remove("activo");
+
+/* =====================================================
+   FORMATEAR PRECIO
+===================================================== */
+
+function formatearPrecio(numero) {
+
+    return numero.toLocaleString("es-CL");
+
+}
+
+
+/* =====================================================
+   AGREGAR AL CARRITO
+===================================================== */
+
+function agregarAlCarrito(id) {
+
+    const producto =
+        productos.find(p => p.id === id);
+
+
+    const existente =
+        carrito.find(p => p.id === id);
+
+
+    if (existente) {
+
+        existente.cantidad++;
+
+    } else {
+
+        carrito.push({
+
+            ...producto,
+
+            cantidad: 1
+
+        });
+
+    }
+
+
+    actualizarCarrito();
+
+    abrirCarrito();
+
+}
+
+
+/* =====================================================
+   ACTUALIZAR CARRITO
+===================================================== */
+
+function actualizarCarrito() {
+
+    const contenido =
+        document.getElementById("carritoContenido");
+
+    const contador =
+        document.getElementById("contadorCarrito");
+
+    const totalElemento =
+        document.getElementById("carritoTotal");
+
+
+    contenido.innerHTML = "";
+
+
+    if (carrito.length === 0) {
+
+        contenido.innerHTML =
+            "<p>Tu carrito está vacío.</p>";
+
+        contador.textContent = "0";
+
+        totalElemento.textContent = "$0";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    let cantidadTotal = 0;
+
+
+    carrito.forEach(producto => {
+
+        const subtotal =
+            producto.precio *
+            producto.cantidad;
+
+
+        total += subtotal;
+
+        cantidadTotal += producto.cantidad;
+
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "item-carrito";
+
+
+        item.innerHTML = `
+
+            <h3>
+                ${producto.nombre}
+            </h3>
+
+            <div>
+                Código: ${producto.codigo}
+            </div>
+
+            <div class="item-precio">
+                $${formatearPrecio(subtotal)}
+            </div>
+
+
+            <div class="controles-cantidad">
+
+                <button
+                    onclick="cambiarCantidad(${producto.id}, -1)">
+                    −
+                </button>
+
+                <strong>
+                    ${producto.cantidad}
+                </strong>
+
+                <button
+                    onclick="cambiarCantidad(${producto.id}, 1)">
+                    +
+                </button>
+
+
+                <button
+                    class="eliminar"
+                    onclick="eliminarProducto(${producto.id})">
+
+                    Eliminar
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        contenido.appendChild(item);
 
     });
 
 
-    if(numero >= slides.length) {
-
-        slideActual = 0;
-
-    }
+    contador.textContent =
+        cantidadTotal;
 
 
-    if(numero < 0) {
-
-        slideActual = slides.length - 1;
-
-    }
-
-
-    slides[slideActual]
-        .classList.add("activa");
-
-
-    if(puntos[slideActual]) {
-
-        puntos[slideActual]
-            .classList.add("activo");
-
-    }
+    totalElemento.textContent =
+        "$" + formatearPrecio(total);
 
 }
 
 
-function cambiarSlide(direccion) {
+/* =====================================================
+   CAMBIAR CANTIDAD
+===================================================== */
 
-    slideActual += direccion;
+function cambiarCantidad(id, cambio) {
 
-    mostrarSlide(slideActual);
+    const producto =
+        carrito.find(p => p.id === id);
 
-}
+
+    if (!producto) return;
 
 
-function siguienteAutomatico() {
+    producto.cantidad += cambio;
 
-    slideActual++;
 
-    if(slideActual >= slides.length) {
+    if (producto.cantidad <= 0) {
 
-        slideActual = 0;
+        carrito =
+            carrito.filter(p => p.id !== id);
 
     }
 
-    mostrarSlide(slideActual);
+
+    actualizarCarrito();
 
 }
 
 
-setInterval(
-    siguienteAutomatico,
-    3000
-);
+/* =====================================================
+   ELIMINAR PRODUCTO
+===================================================== */
+
+function eliminarProducto(id) {
+
+    carrito =
+        carrito.filter(p => p.id !== id);
+
+    actualizarCarrito();
+
+}
+
+
+/* =====================================================
+   ABRIR CARRITO
+===================================================== */
+
+function abrirCarrito() {
+
+    document
+        .getElementById("carritoPanel")
+        .classList.add("abierto");
+
+}
+
+
+/* =====================================================
+   CERRAR CARRITO
+===================================================== */
+
+function cerrarCarrito() {
+
+    document
+        .getElementById("carritoPanel")
+        .classList.remove("abierto");
+
+}
+
+
+/* =====================================================
+   FORMULARIO
+===================================================== */
+
+function abrirFormulario() {
+
+    if (carrito.length === 0) {
+
+        alert(
+            "Agrega al menos un producto al carrito."
+        );
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("modalFormulario")
+        .classList.add("activo");
+
+}
+
+
+function cerrarFormulario() {
+
+    document
+        .getElementById("modalFormulario")
+        .classList.remove("activo");
+
+}
+
+
+/* =====================================================
+   PREPARAR PEDIDO
+===================================================== */
+
+function prepararPedido() {
+
+    const nombre =
+        document
+        .getElementById("nombreCliente")
+        .value.trim();
+
+
+    const telefono =
+        document
+        .getElementById("telefonoCliente")
+        .value.trim();
+
+
+    const correo =
+        document
+        .getElementById("correoCliente")
+        .value.trim();
+
+
+    const direccion =
+        document
+        .getElementById("direccionCliente")
+        .value.trim();
+
+
+    const comuna =
+        document
+        .getElementById("comunaCliente")
+        .value.trim();
+
+
+    if (
+        !nombre ||
+        !telefono ||
+        !correo ||
+        !direccion ||
+        !comuna
+    ) {
+
+        alert(
+            "Por favor completa todos los campos obligatorios."
+        );
+
+        return;
+
+    }
+
+
+    let mensaje =
+        "PEDIDO PINKY'S FURNITURE%0A%0A";
+
+
+    carrito.forEach(producto => {
+
+        mensaje +=
+            `${producto.nombre} - Código: ${producto.codigo} - Cantidad: ${producto.cantidad}%0A`;
+
+    });
+
+
+    let total = 0;
+
+
+    carrito.forEach(producto => {
+
+        total +=
+            producto.precio *
+            producto.cantidad;
+
+    });
+
+
+    mensaje +=
+        `%0ATOTAL: $${formatearPrecio(total)}%0A%0A`;
+
+
+    mensaje +=
+        `Cliente: ${nombre}%0A`;
+
+    mensaje +=
+        `Teléfono: ${telefono}%0A`;
+
+    mensaje +=
+        `Correo: ${correo}%0A`;
+
+    mensaje +=
+        `Dirección: ${direccion}%0A`;
+
+    mensaje +=
+        `Comuna: ${comuna}`;
+
+
+    window.open(
+        "https://wa.me/56921655008?text=" + mensaje,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+document
+    .getElementById("busqueda")
+    .addEventListener("input", function() {
+
+        const texto =
+            this.value
+            .toLowerCase()
+            .trim();
+
+
+        const resultados =
+            productos.filter(producto =>
+
+                producto.nombre
+                    .toLowerCase()
+                    .includes(texto)
+
+                ||
+
+                producto.codigo
+                    .toLowerCase()
+                    .includes(texto)
+
+                ||
+
+                producto.categoria
+                    .toLowerCase()
+                    .includes(texto)
+
+            );
+
+
+        mostrarProductos(resultados);
+
+    });
+
+
+/* =====================================================
+   INICIO
+===================================================== */
+
+mostrarProductos();
 
 </script>
+
 
 </body>
 
