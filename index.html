@@ -11,6 +11,23 @@
 <style>
 
 /* =====================================================
+   PALETA DE COLORES
+===================================================== */
+
+:root {
+    --beige-claro: #F5EFE6;
+    --beige: #E8DED0;
+    --beige-medio: #D8CBB8;
+    --taupe: #B8A58C;
+    --taupe-oscuro: #9F8B72;
+    --cafe: #6B5D4D;
+    --texto: #403B35;
+    --blanco: #FFFFFF;
+    --borde: #E2D8C9;
+}
+
+
+/* =====================================================
    GENERAL
 ===================================================== */
 
@@ -25,8 +42,8 @@ html {
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #fff7fb;
-    color: #222;
+    background: var(--beige-claro);
+    color: var(--texto);
 }
 
 
@@ -35,30 +52,38 @@ body {
 ===================================================== */
 
 header {
-    background: linear-gradient(135deg, #e85b9d, #f28abb);
-    color: white;
+    background: var(--blanco);
+    color: var(--texto);
     text-align: center;
-    padding: 40px 20px 50px;
+    padding: 60px 20px 55px;
+    border-bottom: 1px solid var(--borde);
 }
 
-.logo {
-    width: 180px;
-    max-width: 75%;
-    height: auto;
-    display: block;
-    margin: 0 auto 18px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+/* =====================================================
+   MARCA
+===================================================== */
+
+.marca {
+    text-align: center;
+    margin: 10px auto 30px;
 }
 
-header h1 {
+.marca h1 {
     margin: 0;
-    font-size: 44px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--texto);
 }
 
-header p {
-    font-size: 20px;
-    margin: 12px 0;
+.marca p {
+    margin: 10px 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: var(--cafe);
+    letter-spacing: 0.3px;
 }
 
 
@@ -82,26 +107,42 @@ header p {
     width: 100%;
     height: 45px;
     padding: 0 45px 0 18px;
-    border: none;
+
+    border: 1px solid var(--borde);
     border-radius: 25px;
+
     outline: none;
+
     font-size: 15px;
-    background: white;
-    color: #333;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+
+    background: var(--blanco);
+    color: var(--texto);
+
+    box-shadow: 0 4px 15px rgba(80,60,40,0.12);
 }
 
 .barra-busqueda input::placeholder {
-    color: #888;
+    color: #91877A;
+}
+
+.barra-busqueda input:focus {
+    border-color: var(--taupe);
+
+    box-shadow:
+        0 0 0 3px rgba(184,165,140,0.20),
+        0 4px 15px rgba(80,60,40,0.12);
 }
 
 .icono-busqueda {
     position: absolute;
     right: 15px;
     top: 50%;
+
     transform: translateY(-50%);
-    color: #e85b9d;
+
+    color: var(--cafe);
     font-size: 20px;
+
     pointer-events: none;
 }
 
@@ -112,15 +153,23 @@ header p {
 
 .portada-whatsapp {
     display: inline-block;
+
     margin-top: 20px;
-    padding: 16px 30px;
+
+    padding: 15px 30px;
+
     background: #25D366;
     color: white;
+
     text-decoration: none;
+
     border-radius: 30px;
-    font-size: 17px;
+
+    font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+
     transition: 0.3s;
 }
 
@@ -135,8 +184,10 @@ header p {
 
 .contenedor {
     max-width: 1200px;
+
     margin: auto;
-    padding: 40px 20px;
+
+    padding: 45px 20px;
 }
 
 
@@ -145,46 +196,72 @@ header p {
 ===================================================== */
 
 .menu-categorias {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    margin-bottom: 40px;
+    background: var(--blanco);
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    border: 1px solid var(--borde);
+
+    box-shadow: 0 5px 20px rgba(80,60,40,0.07);
+
+    margin-bottom: 45px;
+
     text-align: center;
 }
 
 .menu-categorias h2 {
-    color: #e85b9d;
+    color: var(--cafe);
+
     margin-top: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
 }
 
 .botones-categorias {
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
     gap: 12px;
 }
 
 .boton-categoria {
-    padding: 12px 22px;
-    border: none;
+    padding: 12px 24px;
+
+    border: 1px solid var(--beige-medio);
+
     border-radius: 25px;
-    background: #f7d4e4;
-    color: #555;
+
+    background: var(--beige-claro);
+
+    color: var(--texto);
+
     font-weight: bold;
+
     cursor: pointer;
+
     text-decoration: none;
+
     transition: 0.3s;
 }
 
 .boton-categoria:hover {
-    background: #e85b9d;
+    background: var(--taupe);
+
     color: white;
+
+    border-color: var(--taupe);
 }
 
 
 /* =====================================================
-   PRODUCTOS
+   SECCIÓN PRODUCTOS
 ===================================================== */
 
 .productos {
@@ -193,35 +270,57 @@ header p {
 
 .titulo-productos {
     text-align: center;
-    color: #e85b9d;
+
+    color: var(--cafe);
+
+    font-family: Georgia, "Times New Roman", serif;
+
     font-size: 34px;
+
     margin-bottom: 30px;
 }
 
 .grid-productos {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
+
+/* =====================================================
+   TARJETA PRODUCTO
+===================================================== */
+
 .producto {
-    background: white;
-    border-radius: 20px;
+    background: var(--blanco);
+
+    border-radius: 18px;
+
     overflow: hidden;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+
+    border: 1px solid var(--borde);
+
+    box-shadow: 0 6px 25px rgba(80,60,40,0.08);
+
     transition: 0.3s;
 }
 
 .producto:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(232,91,157,0.20);
+
+    box-shadow: 0 10px 30px rgba(80,60,40,0.14);
 }
 
 .producto img {
     width: 100%;
+
     height: 240px;
+
     object-fit: contain;
-    background: #f8f8f8;
+
+    background: var(--beige-claro);
 }
 
 .producto-info {
@@ -230,18 +329,27 @@ header p {
 
 .producto-info h3 {
     margin-top: 0;
-    color: #333;
+
+    color: var(--texto);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
 }
 
 .codigo {
-    color: #777;
+    color: #81776B;
+
     font-size: 14px;
 }
 
 .precio {
     font-size: 25px;
+
     font-weight: bold;
-    color: #e85b9d;
+
+    color: var(--cafe);
+
     margin: 15px 0;
 }
 
@@ -252,73 +360,110 @@ header p {
 
 .boton-comprar {
     width: 100%;
+
     padding: 14px;
+
     border: none;
+
     border-radius: 30px;
-    background: #e85b9d;
+
+    background: var(--taupe);
+
     color: white;
+
     font-size: 16px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     transition: 0.3s;
 }
 
 .boton-comprar:hover {
-    background: #d94789;
+    background: var(--taupe-oscuro);
+
+    transform: translateY(-2px);
 }
 
 
 /* =====================================================
-   CATÁLOGOS POR CATEGORÍA
+   CATÁLOGOS
 ===================================================== */
 
 .catalogos-categorias {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
-    margin: 50px 0;
+
+    margin: 55px 0;
 }
 
 .catalogo-categoria {
-    background: white;
+    background: var(--blanco);
+
     padding: 35px 25px;
-    border-radius: 22px;
+
+    border-radius: 18px;
+
     text-align: center;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+
+    border: 1px solid var(--borde);
+
+    box-shadow: 0 6px 25px rgba(80,60,40,0.07);
+
     transition: 0.3s;
 }
 
 .catalogo-categoria:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(232,91,157,0.20);
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 30px rgba(80,60,40,0.13);
 }
 
 .catalogo-categoria h2 {
-    color: #e85b9d;
+    color: var(--cafe);
+
+    font-family: Georgia, "Times New Roman", serif;
+
     font-size: 28px;
+
     margin-top: 0;
 }
 
 .catalogo-categoria p {
-    color: #555;
+    color: #70685E;
+
     line-height: 1.6;
+
     min-height: 50px;
 }
 
 .boton-catalogo {
     display: inline-block;
-    background: #e85b9d;
+
+    background: var(--taupe);
+
     color: white;
+
     padding: 14px 25px;
+
     border-radius: 30px;
+
     text-decoration: none;
+
     font-weight: bold;
+
     margin-top: 10px;
+
     transition: 0.3s;
 }
 
 .boton-catalogo:hover {
-    background: #d94789;
+    background: var(--taupe-oscuro);
+
     transform: translateY(-2px);
 }
 
@@ -329,47 +474,90 @@ header p {
 
 .boton-carrito {
     position: fixed;
+
     right: 20px;
+
     bottom: 95px;
+
     width: 62px;
+
     height: 62px;
+
     border: none;
+
     border-radius: 50%;
-    background: #e85b9d;
+
+    background: var(--cafe);
+
     color: white;
+
     font-size: 28px;
+
     cursor: pointer;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.20);
+
     z-index: 999;
+}
+
+.boton-carrito:hover {
+    background: var(--taupe-oscuro);
 }
 
 .contador-carrito {
     position: absolute;
+
     top: -5px;
+
     right: -5px;
-    background: #222;
+
+    background: var(--texto);
+
     color: white;
+
     width: 24px;
+
     height: 24px;
+
     border-radius: 50%;
+
     font-size: 13px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
+
+/* =====================================================
+   PANEL CARRITO
+===================================================== */
+
 .carrito-panel {
     position: fixed;
+
     top: 0;
+
     right: -430px;
+
     width: 420px;
+
     max-width: 95%;
+
     height: 100vh;
-    background: white;
+
+    background: var(--blanco);
+
     z-index: 10000;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.25);
+
+    box-shadow: -5px 0 25px rgba(0,0,0,0.20);
+
     transition: 0.35s;
+
     display: flex;
+
     flex-direction: column;
 }
 
@@ -378,34 +566,50 @@ header p {
 }
 
 .carrito-header {
-    background: linear-gradient(135deg,#e85b9d,#f28abb);
-    color: white;
+    background: var(--beige-claro);
+
+    color: var(--texto);
+
     padding: 20px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
+    border-bottom: 1px solid var(--borde);
 }
 
 .carrito-header h2 {
     margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .cerrar-carrito {
     border: none;
+
     background: transparent;
-    color: white;
+
+    color: var(--texto);
+
     font-size: 28px;
+
     cursor: pointer;
 }
 
 .carrito-contenido {
     padding: 20px;
+
     overflow-y: auto;
+
     flex: 1;
 }
 
 .item-carrito {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--borde);
+
     padding: 15px 0;
 }
 
@@ -414,70 +618,107 @@ header p {
 }
 
 .item-precio {
-    color: #e85b9d;
+    color: var(--cafe);
+
     font-weight: bold;
 }
 
 .controles-cantidad {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     margin-top: 10px;
 }
 
 .controles-cantidad button {
     width: 30px;
+
     height: 30px;
+
     border: none;
+
     border-radius: 50%;
-    background: #f7d4e4;
+
+    background: var(--beige);
+
     cursor: pointer;
+
     font-weight: bold;
+
+    color: var(--texto);
 }
 
 .eliminar {
     margin-left: auto;
+
     border: none;
+
     background: transparent;
-    color: #d33;
+
+    color: #9A4D4D;
+
     cursor: pointer;
 }
 
 .carrito-total {
     padding: 20px;
-    border-top: 1px solid #ddd;
+
+    border-top: 1px solid var(--borde);
 }
 
 .carrito-total h3 {
     display: flex;
+
     justify-content: space-between;
 }
 
 .boton-continuar {
     width: 100%;
+
     padding: 15px;
+
     border: none;
+
     border-radius: 30px;
-    background: #e85b9d;
+
+    background: var(--cafe);
+
     color: white;
+
     font-size: 16px;
+
     font-weight: bold;
+
     cursor: pointer;
+}
+
+.boton-continuar:hover {
+    background: var(--taupe-oscuro);
 }
 
 
 /* =====================================================
-   FORMULARIO
+   MODAL FORMULARIO
 ===================================================== */
 
 .modal {
     display: none;
+
     position: fixed;
+
     inset: 0;
-    background: rgba(0,0,0,0.6);
+
+    background: rgba(45,40,35,0.60);
+
     z-index: 20000;
+
     align-items: center;
+
     justify-content: center;
+
     padding: 20px;
 }
 
@@ -487,63 +728,105 @@ header p {
 
 .formulario {
     width: 100%;
+
     max-width: 500px;
+
     max-height: 90vh;
+
     overflow-y: auto;
-    background: white;
+
+    background: var(--blanco);
+
     border-radius: 20px;
+
     padding: 30px;
+
+    border: 1px solid var(--borde);
 }
 
 .formulario h2 {
-    color: #e85b9d;
+    color: var(--cafe);
+
+    font-family: Georgia, "Times New Roman", serif;
+
     margin-top: 0;
 }
 
 .formulario label {
     display: block;
+
     margin-top: 15px;
+
     margin-bottom: 6px;
+
     font-weight: bold;
 }
 
 .formulario input,
 .formulario textarea {
     width: 100%;
+
     padding: 13px;
-    border: 1px solid #ddd;
+
+    border: 1px solid var(--borde);
+
     border-radius: 10px;
+
     font-size: 15px;
+
+    outline: none;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--taupe);
 }
 
 .formulario textarea {
     min-height: 90px;
+
     resize: vertical;
 }
 
 .botones-formulario {
     display: flex;
+
     gap: 10px;
+
     margin-top: 20px;
 }
 
 .boton-finalizar {
     flex: 1;
+
     padding: 14px;
+
     border: none;
+
     border-radius: 25px;
+
     background: #25D366;
+
     color: white;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
 .boton-cancelar {
     flex: 1;
+
     padding: 14px;
+
     border: none;
+
     border-radius: 25px;
-    background: #ddd;
+
+    background: var(--beige);
+
+    color: var(--texto);
+
     cursor: pointer;
 }
 
@@ -554,19 +837,33 @@ header p {
 
 .whatsapp-flotante {
     position: fixed;
+
     right: 20px;
+
     bottom: 20px;
+
     width: 62px;
+
     height: 62px;
+
     background: #25D366;
+
     color: white;
+
     border-radius: 50%;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     text-decoration: none;
+
     font-size: 30px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.20);
+
     z-index: 999;
 }
 
@@ -576,15 +873,35 @@ header p {
 ===================================================== */
 
 footer {
-    background: #222;
+    background: #3B3732;
+
     color: white;
+
     text-align: center;
-    padding: 28px 20px;
+
+    padding: 30px 20px;
+
     margin-top: 50px;
 }
 
 footer p {
     margin: 5px;
+
+    color: #E8DED0;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:800px) {
+
+    .grid-productos,
+    .catalogos-categorias {
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
 
 
@@ -592,51 +909,61 @@ footer p {
    CELULAR
 ===================================================== */
 
-@media(max-width:800px) {
+@media(max-width:600px) {
+
+    header {
+        padding-top: 80px;
+    }
+
+    .marca h1 {
+        font-size: 38px;
+    }
+
+    .marca p {
+        font-size: 16px;
+    }
+
+    .buscador-superior {
+        position: fixed;
+
+        top: 10px;
+
+        right: 10px;
+
+        left: 10px;
+    }
+
+    .barra-busqueda {
+        width: 100%;
+    }
+
+    .barra-busqueda input {
+        height: 40px;
+
+        font-size: 14px;
+    }
 
     .grid-productos,
     .catalogos-categorias {
         grid-template-columns: 1fr;
     }
 
-}
-
-@media(max-width:600px) {
-
-    header {
-        padding-top: 75px;
-    }
-
-    header h1 {
-        font-size: 32px;
-    }
-
-    header p {
-        font-size: 17px;
-    }
-
-    .logo {
-        width: 150px;
-    }
-
-    .buscador-superior {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-    }
-
-    .barra-busqueda {
-        width: 210px;
-    }
-
-    .barra-busqueda input {
-        height: 40px;
-        font-size: 14px;
-        padding-left: 15px;
-    }
-
     .contenedor {
         padding: 30px 15px;
+    }
+
+    .titulo-productos {
+        font-size: 28px;
+    }
+
+    .boton-carrito {
+        right: 15px;
+        bottom: 90px;
+    }
+
+    .whatsapp-flotante {
+        right: 15px;
+        bottom: 15px;
     }
 
 }
@@ -654,6 +981,9 @@ footer p {
 ===================================================== -->
 
 <header>
+
+
+<!-- BUSCADOR -->
 
 <div class="buscador-superior">
 
@@ -674,29 +1004,31 @@ placeholder="Buscar productos..."
 </div>
 
 
-<img
-src="WhatsApp%20Image%202026-08-24%20at%205.34.28%20PM.jpeg"
-alt="Pinky's Furniture"
-class="logo"
->
+<!-- MARCA -->
 
+<div class="marca">
 
 <h1>
 Pinky's Furniture
 </h1>
 
-
 <p>
 Muebles y soluciones para tu negocio
 </p>
 
+</div>
+
+
+<!-- WHATSAPP -->
 
 <a
 class="portada-whatsapp"
 href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20productos."
 target="_blank"
 >
+
 💬 COTIZA POR WHATSAPP
+
 </a>
 
 </header>
@@ -713,7 +1045,7 @@ target="_blank"
 <section class="menu-categorias">
 
 <h2>
-🛍️ Categorías
+Categorías
 </h2>
 
 <div class="botones-categorias">
@@ -721,19 +1053,25 @@ target="_blank"
 <a
 href="#sillas"
 class="boton-categoria">
+
 🪑 Sillas y Sitiales
+
 </a>
 
 <a
 href="#mesas"
 class="boton-categoria">
+
 🪵 Mesas
+
 </a>
 
 <a
 href="#muebles"
 class="boton-categoria">
+
 🛋️ Muebles
+
 </a>
 
 </div>
@@ -751,12 +1089,15 @@ class="productos"
 id="productos">
 
 <h2 class="titulo-productos">
-🛒 Compra nuestros productos
+
+Nuestros productos
+
 </h2>
 
 <div
 class="grid-productos"
 id="listaProductos">
+
 </div>
 
 </section>
@@ -764,11 +1105,13 @@ id="listaProductos">
 
 
 <!-- =====================================================
-     CATÁLOGOS INDIVIDUALES
+     CATÁLOGOS
 ===================================================== -->
 
 <section class="catalogos-categorias">
 
+
+<!-- SILLAS -->
 
 <div
 class="catalogo-categoria"
@@ -796,6 +1139,8 @@ class="boton-catalogo">
 
 
 
+<!-- MESAS -->
+
 <div
 class="catalogo-categoria"
 id="mesas">
@@ -822,6 +1167,8 @@ class="boton-catalogo">
 
 
 
+<!-- MUEBLES -->
+
 <div
 class="catalogo-categoria"
 id="muebles">
@@ -845,6 +1192,7 @@ class="boton-catalogo">
 </a>
 
 </div>
+
 
 </section>
 
@@ -884,10 +1232,11 @@ id="contadorCarrito">
 class="carrito-panel"
 id="carritoPanel">
 
+
 <div class="carrito-header">
 
 <h2>
-🛒 Mi carrito
+Mi carrito
 </h2>
 
 <button
@@ -942,7 +1291,7 @@ Continuar compra
 
 
 <!-- =====================================================
-     FORMULARIO CLIENTE
+     FORMULARIO
 ===================================================== -->
 
 <div
@@ -952,7 +1301,7 @@ id="modalFormulario">
 <div class="formulario">
 
 <h2>
-📦 Datos del pedido
+Datos del pedido
 </h2>
 
 
@@ -1036,7 +1385,7 @@ Cancelar
 class="boton-finalizar"
 onclick="prepararPedido()">
 
-Continuar al pago
+Enviar pedido
 
 </button>
 
@@ -1049,7 +1398,7 @@ Continuar al pago
 
 
 <!-- =====================================================
-     WHATSAPP FLOTANTE
+     WHATSAPP
 ===================================================== -->
 
 <a
@@ -1085,37 +1434,40 @@ Muebles y equipamiento para tu negocio
 <script>
 
 /* =====================================================
-   PRODUCTOS DE PRUEBA
+   PRODUCTOS
 ===================================================== */
+
+/*
+   AQUÍ AGREGAREMOS LOS PRODUCTOS REALES.
+
+   Ejemplo:
+
+   {
+       id: 1,
+       nombre: "Silla Modelo X",
+       codigo: "S001",
+       precio: 59990,
+       categoria: "Sillas",
+       imagen: "imagen.jpg"
+   }
+
+   IMPORTANTE:
+   El precio ingresado aquí será el PRECIO FINAL.
+   No se mostrarán ofertas ni precios anteriores.
+*/
 
 const productos = [
 
-{
-    id: 1,
-    nombre: "Producto de prueba 1",
-    codigo: "PRUEBA001",
-    precio: 10000,
-    categoria: "Sillas",
-    imagen: "IMG-20260824-WA0020.jpg"
-},
-
-{
-    id: 2,
-    nombre: "Producto de prueba 2",
-    codigo: "PRUEBA002",
-    precio: 20000,
-    categoria: "Mesas",
-    imagen: "IMG-20260824-WA0021.jpg"
-},
-
-{
-    id: 3,
-    nombre: "Producto de prueba 3",
-    codigo: "PRUEBA003",
-    precio: 30000,
-    categoria: "Muebles",
-    imagen: "IMG-20260824-WA0022.jpg"
-}
+    /*
+    {
+        id: 1,
+        nombre: "Nombre del producto",
+        codigo: "S001",
+        precio: 59990,
+        categoria: "Sillas",
+        imagen: "imagen.jpg"
+    }
+    */
 
 ];
 
@@ -1137,6 +1489,45 @@ function mostrarProductos(lista = productos) {
         document.getElementById("listaProductos");
 
     contenedor.innerHTML = "";
+
+
+    if (lista.length === 0) {
+
+        contenedor.innerHTML = `
+
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                background:white;
+                padding:40px;
+                border-radius:18px;
+                border:1px solid #E2D8C9;
+            ">
+
+                <h3 style="
+                    font-family:Georgia,serif;
+                    color:#6B5D4D;
+                ">
+
+                    Próximamente
+
+                </h3>
+
+                <p style="color:#70685E;">
+
+                    Estamos preparando nuestros productos
+                    para que puedas comprar directamente
+                    desde nuestra página.
+
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
 
 
     lista.forEach(producto => {
@@ -1172,7 +1563,7 @@ function mostrarProductos(lista = productos) {
                     class="boton-comprar"
                     onclick="agregarAlCarrito(${producto.id})">
 
-                    🛒 Comprar ahora
+                    🛒 Comprar
 
                 </button>
 
@@ -1207,6 +1598,9 @@ function agregarAlCarrito(id) {
 
     const producto =
         productos.find(p => p.id === id);
+
+
+    if (!producto) return;
 
 
     const existente =
@@ -1384,7 +1778,7 @@ function cambiarCantidad(id, cambio) {
 
 
 /* =====================================================
-   ELIMINAR PRODUCTO
+   ELIMINAR
 ===================================================== */
 
 function eliminarProducto(id) {
@@ -1492,6 +1886,12 @@ function prepararPedido() {
         .value.trim();
 
 
+    const observaciones =
+        document
+        .getElementById("observacionesCliente")
+        .value.trim();
+
+
     if (
         !nombre ||
         !telefono ||
@@ -1516,7 +1916,7 @@ function prepararPedido() {
     carrito.forEach(producto => {
 
         mensaje +=
-            `${producto.nombre} - Código: ${producto.codigo} - Cantidad: ${producto.cantidad}%0A`;
+            `${producto.nombre} | Código: ${producto.codigo} | Cantidad: ${producto.cantidad}%0A`;
 
     });
 
@@ -1550,7 +1950,10 @@ function prepararPedido() {
         `Dirección: ${direccion}%0A`;
 
     mensaje +=
-        `Comuna: ${comuna}`;
+        `Comuna: ${comuna}%0A`;
+
+    mensaje +=
+        `Observaciones: ${observaciones}`;
 
 
     window.open(
