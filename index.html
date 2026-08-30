@@ -8,2011 +8,478 @@
 
 <title>Pinky's Furniture | Muebles y equipamiento</title>
 
-<style>
-
-/* =====================================================
-   PALETA DE COLORES
-===================================================== */
-
-:root {
-    --beige-claro: #F5EFE6;
-    --beige: #E8DED0;
-    --beige-medio: #D8CBB8;
-    --taupe: #B8A58C;
-    --taupe-oscuro: #9F8B72;
-    --cafe: #6B5D4D;
-    --texto: #403B35;
-    --blanco: #FFFFFF;
-    --borde: #E2D8C9;
-}
-
-
-/* =====================================================
-   GENERAL
-===================================================== */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--beige-claro);
-    color: var(--texto);
-}
-
-
-/* =====================================================
-   PORTADA
-===================================================== */
-
-header {
-    background: var(--blanco);
-    color: var(--texto);
-    text-align: center;
-    padding: 60px 20px 55px;
-    border-bottom: 1px solid var(--borde);
-}
-
-
-/* =====================================================
-   MARCA
-===================================================== */
-
-.marca {
-    text-align: center;
-    margin: 10px auto 30px;
-}
-
-.marca h1 {
-    margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 50px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--texto);
-}
-
-.marca p {
-    margin: 10px 0 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    color: var(--cafe);
-    letter-spacing: 0.3px;
-}
-
-
-/* =====================================================
-   BUSCADOR
-===================================================== */
-
-.buscador-superior {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 9999;
-}
-
-.barra-busqueda {
-    position: relative;
-    width: 280px;
-}
-
-.barra-busqueda input {
-    width: 100%;
-    height: 45px;
-    padding: 0 45px 0 18px;
-
-    border: 1px solid var(--borde);
-    border-radius: 25px;
-
-    outline: none;
-
-    font-size: 15px;
-
-    background: var(--blanco);
-    color: var(--texto);
-
-    box-shadow: 0 4px 15px rgba(80,60,40,0.12);
-}
-
-.barra-busqueda input::placeholder {
-    color: #91877A;
-}
-
-.barra-busqueda input:focus {
-    border-color: var(--taupe);
-
-    box-shadow:
-        0 0 0 3px rgba(184,165,140,0.20),
-        0 4px 15px rgba(80,60,40,0.12);
-}
-
-.icono-busqueda {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: var(--cafe);
-    font-size: 20px;
-
-    pointer-events: none;
-}
-
-
-/* =====================================================
-   WHATSAPP PORTADA
-===================================================== */
-
-.portada-whatsapp {
-    display: inline-block;
-
-    margin-top: 20px;
-
-    padding: 15px 30px;
-
-    background: #25D366;
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 30px;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-
-    transition: 0.3s;
-}
-
-.portada-whatsapp:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =====================================================
-   CONTENEDOR
-===================================================== */
-
-.contenedor {
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 45px 20px;
-}
-
-
-/* =====================================================
-   MENÚ CATEGORÍAS
-===================================================== */
-
-.menu-categorias {
-    background: var(--blanco);
-
-    padding: 28px;
-
-    border-radius: 18px;
-
-    border: 1px solid var(--borde);
-
-    box-shadow: 0 5px 20px rgba(80,60,40,0.07);
-
-    margin-bottom: 45px;
-
-    text-align: center;
-}
-
-.menu-categorias h2 {
-    color: var(--cafe);
-
-    margin-top: 0;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 30px;
-}
-
-.botones-categorias {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-}
-
-.boton-categoria {
-    padding: 12px 24px;
-
-    border: 1px solid var(--beige-medio);
-
-    border-radius: 25px;
-
-    background: var(--beige-claro);
-
-    color: var(--texto);
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-.boton-categoria:hover {
-    background: var(--taupe);
-
-    color: white;
-
-    border-color: var(--taupe);
-}
-
-
-/* =====================================================
-   SECCIÓN PRODUCTOS
-===================================================== */
-
-.productos {
-    margin-top: 40px;
-}
-
-.titulo-productos {
-    text-align: center;
-
-    color: var(--cafe);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 34px;
-
-    margin-bottom: 30px;
-}
-
-.grid-productos {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-/* =====================================================
-   TARJETA PRODUCTO
-===================================================== */
-
-.producto {
-    background: var(--blanco);
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    border: 1px solid var(--borde);
-
-    box-shadow: 0 6px 25px rgba(80,60,40,0.08);
-
-    transition: 0.3s;
-}
-
-.producto:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 10px 30px rgba(80,60,40,0.14);
-}
-
-.producto img {
-    width: 100%;
-
-    height: 240px;
-
-    object-fit: contain;
-
-    background: var(--beige-claro);
-}
-
-.producto-info {
-    padding: 20px;
-}
-
-.producto-info h3 {
-    margin-top: 0;
-
-    color: var(--texto);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 21px;
-}
-
-.codigo {
-    color: #81776B;
-
-    font-size: 14px;
-}
-
-.precio {
-    font-size: 25px;
-
-    font-weight: bold;
-
-    color: var(--cafe);
-
-    margin: 15px 0;
-}
-
-
-/* =====================================================
-   BOTÓN COMPRAR
-===================================================== */
-
-.boton-comprar {
-    width: 100%;
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background: var(--taupe);
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.boton-comprar:hover {
-    background: var(--taupe-oscuro);
-
-    transform: translateY(-2px);
-}
-
-
-/* =====================================================
-   CATÁLOGOS
-===================================================== */
-
-.catalogos-categorias {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-
-    margin: 55px 0;
-}
-
-.catalogo-categoria {
-    background: var(--blanco);
-
-    padding: 35px 25px;
-
-    border-radius: 18px;
-
-    text-align: center;
-
-    border: 1px solid var(--borde);
-
-    box-shadow: 0 6px 25px rgba(80,60,40,0.07);
-
-    transition: 0.3s;
-}
-
-.catalogo-categoria:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 10px 30px rgba(80,60,40,0.13);
-}
-
-.catalogo-categoria h2 {
-    color: var(--cafe);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 28px;
-
-    margin-top: 0;
-}
-
-.catalogo-categoria p {
-    color: #70685E;
-
-    line-height: 1.6;
-
-    min-height: 50px;
-}
-
-.boton-catalogo {
-    display: inline-block;
-
-    background: var(--taupe);
-
-    color: white;
-
-    padding: 14px 25px;
-
-    border-radius: 30px;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    margin-top: 10px;
-
-    transition: 0.3s;
-}
-
-.boton-catalogo:hover {
-    background: var(--taupe-oscuro);
-
-    transform: translateY(-2px);
-}
-
-
-/* =====================================================
-   CARRITO
-===================================================== */
-
-.boton-carrito {
-    position: fixed;
-
-    right: 20px;
-
-    bottom: 95px;
-
-    width: 62px;
-
-    height: 62px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: var(--cafe);
-
-    color: white;
-
-    font-size: 28px;
-
-    cursor: pointer;
-
-    box-shadow: 0 5px 18px rgba(0,0,0,0.20);
-
-    z-index: 999;
-}
-
-.boton-carrito:hover {
-    background: var(--taupe-oscuro);
-}
-
-.contador-carrito {
-    position: absolute;
-
-    top: -5px;
-
-    right: -5px;
-
-    background: var(--texto);
-
-    color: white;
-
-    width: 24px;
-
-    height: 24px;
-
-    border-radius: 50%;
-
-    font-size: 13px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-/* =====================================================
-   PANEL CARRITO
-===================================================== */
-
-.carrito-panel {
-    position: fixed;
-
-    top: 0;
-
-    right: -430px;
-
-    width: 420px;
-
-    max-width: 95%;
-
-    height: 100vh;
-
-    background: var(--blanco);
-
-    z-index: 10000;
-
-    box-shadow: -5px 0 25px rgba(0,0,0,0.20);
-
-    transition: 0.35s;
-
-    display: flex;
-
-    flex-direction: column;
-}
-
-.carrito-panel.abierto {
-    right: 0;
-}
-
-.carrito-header {
-    background: var(--beige-claro);
-
-    color: var(--texto);
-
-    padding: 20px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    border-bottom: 1px solid var(--borde);
-}
-
-.carrito-header h2 {
-    margin: 0;
-
-    font-family: Georgia, "Times New Roman", serif;
-}
-
-.cerrar-carrito {
-    border: none;
-
-    background: transparent;
-
-    color: var(--texto);
-
-    font-size: 28px;
-
-    cursor: pointer;
-}
-
-.carrito-contenido {
-    padding: 20px;
-
-    overflow-y: auto;
-
-    flex: 1;
-}
-
-.item-carrito {
-    border-bottom: 1px solid var(--borde);
-
-    padding: 15px 0;
-}
-
-.item-carrito h3 {
-    margin: 0 0 8px;
-}
-
-.item-precio {
-    color: var(--cafe);
-
-    font-weight: bold;
-}
-
-.controles-cantidad {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 10px;
-}
-
-.controles-cantidad button {
-    width: 30px;
-
-    height: 30px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: var(--beige);
-
-    cursor: pointer;
-
-    font-weight: bold;
-
-    color: var(--texto);
-}
-
-.eliminar {
-    margin-left: auto;
-
-    border: none;
-
-    background: transparent;
-
-    color: #9A4D4D;
-
-    cursor: pointer;
-}
-
-.carrito-total {
-    padding: 20px;
-
-    border-top: 1px solid var(--borde);
-}
-
-.carrito-total h3 {
-    display: flex;
-
-    justify-content: space-between;
-}
-
-.boton-continuar {
-    width: 100%;
-
-    padding: 15px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background: var(--cafe);
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.boton-continuar:hover {
-    background: var(--taupe-oscuro);
-}
-
-
-/* =====================================================
-   MODAL FORMULARIO
-===================================================== */
-
-.modal {
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(45,40,35,0.60);
-
-    z-index: 20000;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.modal.activo {
-    display: flex;
-}
-
-.formulario {
-    width: 100%;
-
-    max-width: 500px;
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    background: var(--blanco);
-
-    border-radius: 20px;
-
-    padding: 30px;
-
-    border: 1px solid var(--borde);
-}
-
-.formulario h2 {
-    color: var(--cafe);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    margin-top: 0;
-}
-
-.formulario label {
-    display: block;
-
-    margin-top: 15px;
-
-    margin-bottom: 6px;
-
-    font-weight: bold;
-}
-
-.formulario input,
-.formulario textarea {
-    width: 100%;
-
-    padding: 13px;
-
-    border: 1px solid var(--borde);
-
-    border-radius: 10px;
-
-    font-size: 15px;
-
-    outline: none;
-}
-
-.formulario input:focus,
-.formulario textarea:focus {
-    border-color: var(--taupe);
-}
-
-.formulario textarea {
-    min-height: 90px;
-
-    resize: vertical;
-}
-
-.botones-formulario {
-    display: flex;
-
-    gap: 10px;
-
-    margin-top: 20px;
-}
-
-.boton-finalizar {
-    flex: 1;
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 25px;
-
-    background: #25D366;
-
-    color: white;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.boton-cancelar {
-    flex: 1;
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 25px;
-
-    background: var(--beige);
-
-    color: var(--texto);
-
-    cursor: pointer;
-}
-
-
-/* =====================================================
-   WHATSAPP FLOTANTE
-===================================================== */
-
-.whatsapp-flotante {
-    position: fixed;
-
-    right: 20px;
-
-    bottom: 20px;
-
-    width: 62px;
-
-    height: 62px;
-
-    background: #25D366;
-
-    color: white;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-decoration: none;
-
-    font-size: 30px;
-
-    box-shadow: 0 5px 18px rgba(0,0,0,0.20);
-
-    z-index: 999;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-    background: #3B3732;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 30px 20px;
-
-    margin-top: 50px;
-}
-
-footer p {
-    margin: 5px;
-
-    color: #E8DED0;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media(max-width:800px) {
-
-    .grid-productos,
-    .catalogos-categorias {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-
-
-/* =====================================================
-   CELULAR
-===================================================== */
-
-@media(max-width:600px) {
-
-    header {
-        padding-top: 80px;
-    }
-
-    .marca h1 {
-        font-size: 38px;
-    }
-
-    .marca p {
-        font-size: 16px;
-    }
-
-    .buscador-superior {
-        position: fixed;
-
-        top: 10px;
-
-        right: 10px;
-
-        left: 10px;
-    }
-
-    .barra-busqueda {
-        width: 100%;
-    }
-
-    .barra-busqueda input {
-        height: 40px;
-
-        font-size: 14px;
-    }
-
-    .grid-productos,
-    .catalogos-categorias {
-        grid-template-columns: 1fr;
-    }
-
-    .contenedor {
-        padding: 30px 15px;
-    }
-
-    .titulo-productos {
-        font-size: 28px;
-    }
-
-    .boton-carrito {
-        right: 15px;
-        bottom: 90px;
-    }
-
-    .whatsapp-flotante {
-        right: 15px;
-        bottom: 15px;
-    }
-
-}
-
-</style>
+<link rel="stylesheet" href="estilos.css">
 
 </head>
-
 
 <body>
 
 
-<!-- =====================================================
-     PORTADA
-===================================================== -->
+<!-- ================================
+     ENCABEZADO
+================================ -->
 
-<header>
+<header class="encabezado">
 
+    <div class="buscador-superior">
 
-<!-- BUSCADOR -->
+        <input
+            type="text"
+            id="busquedaPrincipal"
+            placeholder="Buscar productos..."
+        >
 
-<div class="buscador-superior">
+        <span>🔍</span>
 
-<div class="barra-busqueda">
-
-<input
-type="text"
-id="busqueda"
-placeholder="Buscar productos..."
->
-
-<span class="icono-busqueda">
-🔍
-</span>
-
-</div>
-
-</div>
+    </div>
 
 
-<!-- MARCA -->
+    <div class="marca">
 
-<div class="marca">
+        <h1>Pinky's Furniture</h1>
 
-<h1>
-Pinky's Furniture
-</h1>
+        <p>Muebles y soluciones para tu negocio</p>
 
-<p>
-Muebles y soluciones para tu negocio
-</p>
-
-</div>
+    </div>
 
 
-<!-- WHATSAPP -->
+    <a
+        href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20productos."
+        target="_blank"
+        class="boton-whatsapp"
+    >
 
-<a
-class="portada-whatsapp"
-href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20consultar%20por%20sus%20productos."
-target="_blank"
->
+        💬 Cotizar por WhatsApp
 
-💬 COTIZA POR WHATSAPP
-
-</a>
+    </a>
 
 </header>
 
 
 
+<!-- ================================
+     CONTENIDO
+================================ -->
+
 <main class="contenedor">
 
 
-<!-- =====================================================
-     CATEGORÍAS
-===================================================== -->
+    <section class="bienvenida">
 
-<section class="menu-categorias">
+        <h2>Bienvenido a Pinky's Furniture</h2>
 
-<h2>
-Categorías
-</h2>
+        <p>
+            Descubre nuestra selección de muebles,
+            sillas, sitiales y mesas.
+        </p>
 
-<div class="botones-categorias">
-
-<a
-href="#sillas"
-class="boton-categoria">
-
-🪑 Sillas y Sitiales
-
-</a>
-
-<a
-href="#mesas"
-class="boton-categoria">
-
-🪵 Mesas
-
-</a>
-
-<a
-href="#muebles"
-class="boton-categoria">
-
-🛋️ Muebles
-
-</a>
-
-</div>
-
-</section>
+    </section>
 
 
 
-<!-- =====================================================
-     PRODUCTOS
-===================================================== -->
+    <!-- ================================
+         CATEGORÍAS
+    ================================= -->
 
-<section
-class="productos"
-id="productos">
+    <section class="categorias">
 
-<h2 class="titulo-productos">
-
-Nuestros productos
-
-</h2>
-
-<div
-class="grid-productos"
-id="listaProductos">
-
-</div>
-
-</section>
+        <h2>Categorías</h2>
 
 
-
-<!-- =====================================================
-     CATÁLOGOS
-===================================================== -->
-
-<section class="catalogos-categorias">
+        <div class="categorias-grid">
 
 
-<!-- SILLAS -->
+            <a
+                href="sillas.html"
+                class="categoria"
+            >
 
-<div
-class="catalogo-categoria"
-id="sillas">
+                <div class="categoria-icono">
+                    🪑
+                </div>
 
-<h2>
-🪑 Sillas y Sitiales
-</h2>
+                <h3>Sillas y Sitiales</h3>
 
-<p>
-Revisa nuestro catálogo completo
-de sillas y sitiales.
-</p>
+                <p>
+                    Descubre nuestra colección
+                    de sillas y sitiales.
+                </p>
 
-<a
-href="catálogo%20de%20sillas%20y%20sitiales%20.pdf"
-target="_blank"
-class="boton-catalogo">
+                <span>
+                    Ver productos →
+                </span>
 
-📖 VER CATÁLOGO
-
-</a>
-
-</div>
+            </a>
 
 
 
-<!-- MESAS -->
+            <a
+                href="mesas.html"
+                class="categoria"
+            >
 
-<div
-class="catalogo-categoria"
-id="mesas">
+                <div class="categoria-icono">
+                    🪵
+                </div>
 
-<h2>
-🪵 Mesas
-</h2>
+                <h3>Mesas</h3>
 
-<p>
-Conoce nuestro catálogo completo
-de mesas.
-</p>
+                <p>
+                    Mesas para negocios,
+                    restaurantes y hogares.
+                </p>
 
-<a
-href="CATALOGO_PINKYS_MESAS.pdf"
-target="_blank"
-class="boton-catalogo">
+                <span>
+                    Ver productos →
+                </span>
 
-📖 VER CATÁLOGO
-
-</a>
-
-</div>
+            </a>
 
 
 
-<!-- MUEBLES -->
+            <a
+                href="muebles.html"
+                class="categoria"
+            >
 
-<div
-class="catalogo-categoria"
-id="muebles">
+                <div class="categoria-icono">
+                    🛋️
+                </div>
 
-<h2>
-🛋️ Muebles
-</h2>
+                <h3>Muebles</h3>
 
-<p>
-Descubre nuestro catálogo completo
-de muebles.
-</p>
+                <p>
+                    Muebles funcionales y
+                    decorativos.
+                </p>
 
-<a
-href="CATALOGO_PINKYS_MUEBLES.pdf"
-target="_blank"
-class="boton-catalogo">
+                <span>
+                    Ver productos →
+                </span>
 
-📖 VER CATÁLOGO
-
-</a>
-
-</div>
+            </a>
 
 
-</section>
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         PRODUCTOS DESTACADOS
+    ================================= -->
+
+    <section class="destacados">
+
+        <div class="titulo-seccion">
+
+            <h2>Productos destacados</h2>
+
+            <p>
+                Conoce algunos de nuestros productos.
+            </p>
+
+        </div>
+
+
+        <div
+            id="productosDestacados"
+            class="productos-grid"
+        ></div>
+
+
+    </section>
 
 
 </main>
 
 
 
-<!-- =====================================================
-     BOTÓN CARRITO
-===================================================== -->
+<!-- ================================
+     CARRITO
+================================ -->
 
 <button
-class="boton-carrito"
-onclick="abrirCarrito()"
-aria-label="Abrir carrito">
+    class="boton-carrito"
+    onclick="abrirCarrito()"
+>
 
-🛒
+    🛒
 
-<span
-class="contador-carrito"
-id="contadorCarrito">
-
-0
-
-</span>
+    <span
+        id="contadorCarrito"
+        class="contador"
+    >
+        0
+    </span>
 
 </button>
 
 
 
-<!-- =====================================================
-     PANEL CARRITO
-===================================================== -->
+<!-- PANEL CARRITO -->
 
 <aside
-class="carrito-panel"
-id="carritoPanel">
+    id="carritoPanel"
+    class="carrito-panel"
+>
+
+    <div class="carrito-header">
+
+        <h2>Mi carrito</h2>
+
+        <button onclick="cerrarCarrito()">
+            ×
+        </button>
+
+    </div>
 
 
-<div class="carrito-header">
-
-<h2>
-Mi carrito
-</h2>
-
-<button
-class="cerrar-carrito"
-onclick="cerrarCarrito()">
-
-×
-
-</button>
-
-</div>
+    <div
+        id="carritoContenido"
+        class="carrito-contenido"
+    ></div>
 
 
-<div
-class="carrito-contenido"
-id="carritoContenido">
+    <div class="carrito-footer">
 
-<p>
-Tu carrito está vacío.
-</p>
+        <div class="total">
 
-</div>
+            <span>Total</span>
 
+            <strong id="carritoTotal">
+                $0
+            </strong>
 
-<div class="carrito-total">
-
-<h3>
-
-<span>
-Total
-</span>
-
-<span id="carritoTotal">
-$0
-</span>
-
-</h3>
+        </div>
 
 
-<button
-class="boton-continuar"
-onclick="abrirFormulario()">
+        <button
+            class="boton-principal"
+            onclick="abrirFormulario()"
+        >
 
-Continuar compra
+            Continuar compra
 
-</button>
+        </button>
 
-</div>
+    </div>
 
 </aside>
 
 
 
-<!-- =====================================================
-     FORMULARIO
-===================================================== -->
+<!-- ================================
+     FORMULARIO CLIENTE
+================================ -->
 
 <div
-class="modal"
-id="modalFormulario">
-
-<div class="formulario">
-
-<h2>
-Datos del pedido
-</h2>
-
-
-<label>
-Nombre completo
-</label>
-
-<input
-type="text"
-id="nombreCliente"
-placeholder="Tu nombre"
+    id="modalFormulario"
+    class="modal"
 >
 
+    <div class="formulario">
 
-<label>
-Teléfono
-</label>
-
-<input
-type="tel"
-id="telefonoCliente"
-placeholder="+56 9..."
->
+        <button
+            class="cerrar-modal"
+            onclick="cerrarFormulario()"
+        >
+            ×
+        </button>
 
 
-<label>
-Correo electrónico
-</label>
-
-<input
-type="email"
-id="correoCliente"
-placeholder="correo@ejemplo.com"
->
+        <h2>Datos del cliente</h2>
 
 
-<label>
-Dirección
-</label>
+        <label>
+            Nombre completo *
+        </label>
 
-<input
-type="text"
-id="direccionCliente"
-placeholder="Dirección de entrega"
->
-
-
-<label>
-Comuna
-</label>
-
-<input
-type="text"
-id="comunaCliente"
-placeholder="Comuna"
->
+        <input
+            type="text"
+            id="nombreCliente"
+        >
 
 
-<label>
-Observaciones
-</label>
+        <label>
+            Teléfono *
+        </label>
 
-<textarea
-id="observacionesCliente"
-placeholder="Información adicional del pedido">
-</textarea>
-
-
-<div class="botones-formulario">
-
-<button
-class="boton-cancelar"
-onclick="cerrarFormulario()">
-
-Cancelar
-
-</button>
+        <input
+            type="tel"
+            id="telefonoCliente"
+        >
 
 
-<button
-class="boton-finalizar"
-onclick="prepararPedido()">
+        <label>
+            Correo electrónico
+        </label>
 
-Enviar pedido
+        <input
+            type="email"
+            id="correoCliente"
+        >
 
-</button>
 
-</div>
+        <label>
+            Dirección *
+        </label>
 
-</div>
+        <input
+            type="text"
+            id="direccionCliente"
+        >
+
+
+        <label>
+            Comuna *
+        </label>
+
+        <input
+            type="text"
+            id="comunaCliente"
+        >
+
+
+        <label>
+            Observaciones
+        </label>
+
+        <textarea
+            id="observacionesCliente"
+        ></textarea>
+
+
+        <button
+            class="boton-whatsapp-final"
+            onclick="enviarPedidoWhatsApp()"
+        >
+
+            💬 Enviar pedido por WhatsApp
+
+        </button>
+
+    </div>
 
 </div>
 
 
 
-<!-- =====================================================
+<!-- ================================
      WHATSAPP
-===================================================== -->
+================================ -->
 
 <a
-class="whatsapp-flotante"
-href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20información%20sobre%20sus%20productos."
-target="_blank"
-aria-label="Contactar por WhatsApp">
+    href="https://wa.me/56921655008?text=Hola%20Pinky's%20Furniture,%20quiero%20información%20sobre%20sus%20productos."
+    target="_blank"
+    class="whatsapp-flotante"
+>
 
-💬
+    💬
 
 </a>
 
 
 
-<!-- =====================================================
+<!-- ================================
      FOOTER
-===================================================== -->
+================================ -->
 
 <footer>
 
-<p>
-© 2026 Pinky's Furniture
-</p>
+    <strong>Pinky's Furniture</strong>
 
-<p>
-Muebles y equipamiento para tu negocio
-</p>
+    <p>
+        Muebles y soluciones para tu negocio
+    </p>
+
+    <p>
+        © 2026 Pinky's Furniture
+    </p>
 
 </footer>
 
 
 
+<script src="productos.js"></script>
+<script src="carrito.js"></script>
+
+
 <script>
 
-/* =====================================================
-   PRODUCTOS
-===================================================== */
+/* =====================================
+   PRODUCTOS DESTACADOS
+===================================== */
 
-/*
-   AQUÍ AGREGAREMOS LOS PRODUCTOS REALES.
+const contenedor =
+    document.getElementById("productosDestacados");
 
-   Ejemplo:
 
-   {
-       id: 1,
-       nombre: "Silla Modelo X",
-       codigo: "S001",
-       precio: 59990,
-       categoria: "Sillas",
-       imagen: "imagen.jpg"
-   }
+const destacados =
+    productos.slice(0, 6);
 
-   IMPORTANTE:
-   El precio ingresado aquí será el PRECIO FINAL.
-   No se mostrarán ofertas ni precios anteriores.
-*/
 
-const productos = [
+mostrarProductosEnContenedor(
+    destacados,
+    contenedor
+);
 
-    /*
-    {
-        id: 1,
-        nombre: "Nombre del producto",
-        codigo: "S001",
-        precio: 59990,
-        categoria: "Sillas",
-        imagen: "imagen.jpg"
-    }
-    */
 
-];
-
-
-/* =====================================================
-   CARRITO
-===================================================== */
-
-let carrito = [];
-
-
-/* =====================================================
-   MOSTRAR PRODUCTOS
-===================================================== */
-
-function mostrarProductos(lista = productos) {
-
-    const contenedor =
-        document.getElementById("listaProductos");
-
-    contenedor.innerHTML = "";
-
-
-    if (lista.length === 0) {
-
-        contenedor.innerHTML = `
-
-            <div style="
-                grid-column:1/-1;
-                text-align:center;
-                background:white;
-                padding:40px;
-                border-radius:18px;
-                border:1px solid #E2D8C9;
-            ">
-
-                <h3 style="
-                    font-family:Georgia,serif;
-                    color:#6B5D4D;
-                ">
-
-                    Próximamente
-
-                </h3>
-
-                <p style="color:#70685E;">
-
-                    Estamos preparando nuestros productos
-                    para que puedas comprar directamente
-                    desde nuestra página.
-
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    lista.forEach(producto => {
-
-        const tarjeta =
-            document.createElement("div");
-
-        tarjeta.className = "producto";
-
-
-        tarjeta.innerHTML = `
-
-            <img
-                src="${producto.imagen}"
-                alt="${producto.nombre}"
-            >
-
-            <div class="producto-info">
-
-                <h3>
-                    ${producto.nombre}
-                </h3>
-
-                <div class="codigo">
-                    Código: ${producto.codigo}
-                </div>
-
-                <div class="precio">
-                    $${formatearPrecio(producto.precio)}
-                </div>
-
-                <button
-                    class="boton-comprar"
-                    onclick="agregarAlCarrito(${producto.id})">
-
-                    🛒 Comprar
-
-                </button>
-
-            </div>
-
-        `;
-
-
-        contenedor.appendChild(tarjeta);
-
-    });
-
-}
-
-
-/* =====================================================
-   FORMATEAR PRECIO
-===================================================== */
-
-function formatearPrecio(numero) {
-
-    return numero.toLocaleString("es-CL");
-
-}
-
-
-/* =====================================================
-   AGREGAR AL CARRITO
-===================================================== */
-
-function agregarAlCarrito(id) {
-
-    const producto =
-        productos.find(p => p.id === id);
-
-
-    if (!producto) return;
-
-
-    const existente =
-        carrito.find(p => p.id === id);
-
-
-    if (existente) {
-
-        existente.cantidad++;
-
-    } else {
-
-        carrito.push({
-
-            ...producto,
-
-            cantidad: 1
-
-        });
-
-    }
-
-
-    actualizarCarrito();
-
-    abrirCarrito();
-
-}
-
-
-/* =====================================================
-   ACTUALIZAR CARRITO
-===================================================== */
-
-function actualizarCarrito() {
-
-    const contenido =
-        document.getElementById("carritoContenido");
-
-    const contador =
-        document.getElementById("contadorCarrito");
-
-    const totalElemento =
-        document.getElementById("carritoTotal");
-
-
-    contenido.innerHTML = "";
-
-
-    if (carrito.length === 0) {
-
-        contenido.innerHTML =
-            "<p>Tu carrito está vacío.</p>";
-
-        contador.textContent = "0";
-
-        totalElemento.textContent = "$0";
-
-        return;
-
-    }
-
-
-    let total = 0;
-
-    let cantidadTotal = 0;
-
-
-    carrito.forEach(producto => {
-
-        const subtotal =
-            producto.precio *
-            producto.cantidad;
-
-
-        total += subtotal;
-
-        cantidadTotal += producto.cantidad;
-
-
-        const item =
-            document.createElement("div");
-
-        item.className =
-            "item-carrito";
-
-
-        item.innerHTML = `
-
-            <h3>
-                ${producto.nombre}
-            </h3>
-
-            <div>
-                Código: ${producto.codigo}
-            </div>
-
-            <div class="item-precio">
-                $${formatearPrecio(subtotal)}
-            </div>
-
-
-            <div class="controles-cantidad">
-
-                <button
-                    onclick="cambiarCantidad(${producto.id}, -1)">
-                    −
-                </button>
-
-                <strong>
-                    ${producto.cantidad}
-                </strong>
-
-                <button
-                    onclick="cambiarCantidad(${producto.id}, 1)">
-                    +
-                </button>
-
-
-                <button
-                    class="eliminar"
-                    onclick="eliminarProducto(${producto.id})">
-
-                    Eliminar
-
-                </button>
-
-            </div>
-
-        `;
-
-
-        contenido.appendChild(item);
-
-    });
-
-
-    contador.textContent =
-        cantidadTotal;
-
-
-    totalElemento.textContent =
-        "$" + formatearPrecio(total);
-
-}
-
-
-/* =====================================================
-   CAMBIAR CANTIDAD
-===================================================== */
-
-function cambiarCantidad(id, cambio) {
-
-    const producto =
-        carrito.find(p => p.id === id);
-
-
-    if (!producto) return;
-
-
-    producto.cantidad += cambio;
-
-
-    if (producto.cantidad <= 0) {
-
-        carrito =
-            carrito.filter(p => p.id !== id);
-
-    }
-
-
-    actualizarCarrito();
-
-}
-
-
-/* =====================================================
-   ELIMINAR
-===================================================== */
-
-function eliminarProducto(id) {
-
-    carrito =
-        carrito.filter(p => p.id !== id);
-
-    actualizarCarrito();
-
-}
-
-
-/* =====================================================
-   ABRIR CARRITO
-===================================================== */
-
-function abrirCarrito() {
-
-    document
-        .getElementById("carritoPanel")
-        .classList.add("abierto");
-
-}
-
-
-/* =====================================================
-   CERRAR CARRITO
-===================================================== */
-
-function cerrarCarrito() {
-
-    document
-        .getElementById("carritoPanel")
-        .classList.remove("abierto");
-
-}
-
-
-/* =====================================================
-   FORMULARIO
-===================================================== */
-
-function abrirFormulario() {
-
-    if (carrito.length === 0) {
-
-        alert(
-            "Agrega al menos un producto al carrito."
-        );
-
-        return;
-
-    }
-
-
-    document
-        .getElementById("modalFormulario")
-        .classList.add("activo");
-
-}
-
-
-function cerrarFormulario() {
-
-    document
-        .getElementById("modalFormulario")
-        .classList.remove("activo");
-
-}
-
-
-/* =====================================================
-   PREPARAR PEDIDO
-===================================================== */
-
-function prepararPedido() {
-
-    const nombre =
-        document
-        .getElementById("nombreCliente")
-        .value.trim();
-
-
-    const telefono =
-        document
-        .getElementById("telefonoCliente")
-        .value.trim();
-
-
-    const correo =
-        document
-        .getElementById("correoCliente")
-        .value.trim();
-
-
-    const direccion =
-        document
-        .getElementById("direccionCliente")
-        .value.trim();
-
-
-    const comuna =
-        document
-        .getElementById("comunaCliente")
-        .value.trim();
-
-
-    const observaciones =
-        document
-        .getElementById("observacionesCliente")
-        .value.trim();
-
-
-    if (
-        !nombre ||
-        !telefono ||
-        !correo ||
-        !direccion ||
-        !comuna
-    ) {
-
-        alert(
-            "Por favor completa todos los campos obligatorios."
-        );
-
-        return;
-
-    }
-
-
-    let mensaje =
-        "PEDIDO PINKY'S FURNITURE%0A%0A";
-
-
-    carrito.forEach(producto => {
-
-        mensaje +=
-            `${producto.nombre} | Código: ${producto.codigo} | Cantidad: ${producto.cantidad}%0A`;
-
-    });
-
-
-    let total = 0;
-
-
-    carrito.forEach(producto => {
-
-        total +=
-            producto.precio *
-            producto.cantidad;
-
-    });
-
-
-    mensaje +=
-        `%0ATOTAL: $${formatearPrecio(total)}%0A%0A`;
-
-
-    mensaje +=
-        `Cliente: ${nombre}%0A`;
-
-    mensaje +=
-        `Teléfono: ${telefono}%0A`;
-
-    mensaje +=
-        `Correo: ${correo}%0A`;
-
-    mensaje +=
-        `Dirección: ${direccion}%0A`;
-
-    mensaje +=
-        `Comuna: ${comuna}%0A`;
-
-    mensaje +=
-        `Observaciones: ${observaciones}`;
-
-
-    window.open(
-        "https://wa.me/56921655008?text=" + mensaje,
-        "_blank"
-    );
-
-}
-
-
-/* =====================================================
-   BUSCADOR
-===================================================== */
+/* =====================================
+   BUSCADOR PRINCIPAL
+===================================== */
 
 document
-    .getElementById("busqueda")
-    .addEventListener("input", function() {
+.getElementById("busquedaPrincipal")
+.addEventListener("input", function() {
 
-        const texto =
-            this.value
+    const texto =
+        this.value.toLowerCase().trim();
+
+
+    if (!texto) {
+
+        mostrarProductosEnContenedor(
+            destacados,
+            contenedor
+        );
+
+        return;
+
+    }
+
+
+    const resultados =
+        productos.filter(producto =>
+
+            producto.nombre
             .toLowerCase()
-            .trim();
+            .includes(texto)
+
+            ||
+
+            producto.codigo
+            .toLowerCase()
+            .includes(texto)
+
+            ||
+
+            producto.categoria
+            .toLowerCase()
+            .includes(texto)
+
+        );
 
 
-        const resultados =
-            productos.filter(producto =>
+    mostrarProductosEnContenedor(
+        resultados,
+        contenedor
+    );
 
-                producto.nombre
-                    .toLowerCase()
-                    .includes(texto)
-
-                ||
-
-                producto.codigo
-                    .toLowerCase()
-                    .includes(texto)
-
-                ||
-
-                producto.categoria
-                    .toLowerCase()
-                    .includes(texto)
-
-            );
-
-
-        mostrarProductos(resultados);
-
-    });
-
-
-/* =====================================================
-   INICIO
-===================================================== */
-
-mostrarProductos();
+});
 
 </script>
-
 
 </body>
 
