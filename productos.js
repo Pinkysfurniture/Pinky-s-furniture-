@@ -7,7 +7,7 @@ const productos = [
         medidas: "30 × 30 × 60 cm",
         precio: 32000,
         categoria: "Muebles",
-        imagen: "DA402.jpg"
+        imagen: "imagenes/muebles/1000113050_DA402.jpg"
     },
 
     {
@@ -17,7 +17,7 @@ const productos = [
         medidas: "30 × 30 × 79 cm",
         precio: 40000,
         categoria: "Muebles",
-        imagen: "DA403.jpg"
+        imagen: "imagenes/muebles/1000113051_DA403.jpg"
     },
 
     {
@@ -27,7 +27,7 @@ const productos = [
         medidas: "60 × 35 × 75 cm",
         precio: 54000,
         categoria: "Muebles",
-        imagen: "DA404.jpg"
+        imagen: "imagenes/muebles/1000113052_DA404.jpg"
     },
 
     {
@@ -37,7 +37,7 @@ const productos = [
         medidas: "60 × 35 × 90 cm",
         precio: 65000,
         categoria: "Muebles",
-        imagen: "DA405.jpg"
+        imagen: "imagenes/muebles/1000113053_DA405.jpg"
     },
 
     {
@@ -47,7 +47,7 @@ const productos = [
         medidas: "74 × 35 × 81 cm",
         precio: 83000,
         categoria: "Muebles",
-        imagen: "DA406.jpg"
+        imagen: "imagenes/muebles/1000113054_DA406.jpg"
     },
 
     {
@@ -57,7 +57,7 @@ const productos = [
         medidas: "80 × 35 × 86 cm",
         precio: 86000,
         categoria: "Muebles",
-        imagen: "DA408.jpg"
+        imagen: "imagenes/muebles/1000113055_DA408.jpg"
     },
 
     {
@@ -67,7 +67,7 @@ const productos = [
         medidas: "30 × 27 × 43 cm",
         precio: 32000,
         categoria: "Muebles",
-        imagen: "DA409.jpg"
+        imagen: "imagenes/muebles/1000113056_DA409.jpg"
     },
 
     {
@@ -77,7 +77,7 @@ const productos = [
         medidas: "30 × 27 × 61 cm",
         precio: 32000,
         categoria: "Muebles",
-        imagen: "DA410.jpg"
+        imagen: "imagenes/muebles/1000113057_DA410.jpg"
     },
 
     {
@@ -87,7 +87,7 @@ const productos = [
         medidas: "30 × 27 × 78 cm",
         precio: 40000,
         categoria: "Muebles",
-        imagen: "DA411.jpg"
+        imagen: "imagenes/muebles/1000113058_DA411.jpg"
     },
 
     {
@@ -97,7 +97,7 @@ const productos = [
         medidas: "100 × 38 × 70 cm",
         precio: 135000,
         categoria: "Muebles",
-        imagen: "DA412.jpg"
+        imagen: "imagenes/muebles/1000113059_DA412.jpg"
     },
 
     {
@@ -107,7 +107,7 @@ const productos = [
         medidas: "100 × 35 × 90 cm",
         precio: 135000,
         categoria: "Muebles",
-        imagen: "DA413.jpg"
+        imagen: "imagenes/muebles/1000113060_DA413.jpg"
     }
 
 ];
