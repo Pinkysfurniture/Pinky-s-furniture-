@@ -15,25 +15,35 @@
 <body>
 
 
+<!-- =================================
+     ENCABEZADO
+================================= -->
+
 <header class="encabezado-secundario">
 
-    <a href="index.html" class="volver">
+    <a
+        href="index.html"
+        class="volver"
+    >
         ← Pinky's Furniture
     </a>
+
 
     <h1>Sillas y Sitiales</h1>
 
     <p>
-        Nuestra colección de sillas y sitiales
+        Descubre nuestra colección de sillas y sitiales
     </p>
 
+
+    <!-- BUSCADOR -->
 
     <div class="buscador-pagina">
 
         <input
             type="text"
             id="busqueda"
-            placeholder="Buscar sillas..."
+            placeholder="Buscar sillas o sitiales..."
         >
 
         🔍
@@ -43,6 +53,10 @@
 </header>
 
 
+
+<!-- =================================
+     PRODUCTOS
+================================= -->
 
 <main class="contenedor">
 
@@ -54,6 +68,10 @@
 </main>
 
 
+
+<!-- =================================
+     CARRITO
+================================= -->
 
 <button
     class="boton-carrito"
@@ -72,6 +90,8 @@
 </button>
 
 
+
+<!-- PANEL DEL CARRITO -->
 
 <aside
     id="carritoPanel"
@@ -123,6 +143,10 @@
 
 
 
+<!-- =================================
+     FORMULARIO CLIENTE
+================================= -->
+
 <div
     id="modalFormulario"
     class="modal"
@@ -141,7 +165,9 @@
         <h2>Datos del cliente</h2>
 
 
-        <label>Nombre completo *</label>
+        <label>
+            Nombre completo *
+        </label>
 
         <input
             type="text"
@@ -149,7 +175,9 @@
         >
 
 
-        <label>Teléfono *</label>
+        <label>
+            Teléfono *
+        </label>
 
         <input
             type="tel"
@@ -157,7 +185,9 @@
         >
 
 
-        <label>Correo electrónico</label>
+        <label>
+            Correo electrónico
+        </label>
 
         <input
             type="email"
@@ -165,7 +195,9 @@
         >
 
 
-        <label>Dirección *</label>
+        <label>
+            Dirección *
+        </label>
 
         <input
             type="text"
@@ -173,7 +205,9 @@
         >
 
 
-        <label>Comuna *</label>
+        <label>
+            Comuna *
+        </label>
 
         <input
             type="text"
@@ -181,7 +215,9 @@
         >
 
 
-        <label>Observaciones</label>
+        <label>
+            Observaciones
+        </label>
 
         <textarea
             id="observacionesCliente"
@@ -203,6 +239,10 @@
 
 
 
+<!-- =================================
+     WHATSAPP FLOTANTE
+================================= -->
+
 <a
     href="https://wa.me/56921655008"
     target="_blank"
@@ -215,6 +255,10 @@
 
 
 
+<!-- =================================
+     FOOTER
+================================= -->
+
 <footer>
 
     <strong>Pinky's Furniture</strong>
@@ -223,31 +267,40 @@
         Muebles y soluciones para tu negocio
     </p>
 
+    <p>
+        © 2026 Pinky's Furniture
+    </p>
+
 </footer>
 
 
 
+<!-- =================================
+     JAVASCRIPT
+================================= -->
+
 <script src="productos.js"></script>
+
+<script src="sillas-productos.js"></script>
+
 <script src="carrito.js"></script>
 
 
+
 <script>
+
+/* =====================================
+   MOSTRAR SILLAS
+===================================== */
 
 const contenedor =
     document.getElementById("listaProductos");
 
 
-function mostrarSillas(lista = productos) {
-
-    const sillas =
-        lista.filter(
-            producto =>
-            producto.categoria === "Sillas"
-        );
-
+function mostrarSillas(lista = productosSillas) {
 
     mostrarProductosEnContenedor(
-        sillas,
+        lista,
         contenedor
     );
 
@@ -257,44 +310,52 @@ function mostrarSillas(lista = productos) {
 mostrarSillas();
 
 
+
+/* =====================================
+   BUSCADOR
+===================================== */
+
 document
 .getElementById("busqueda")
 .addEventListener("input", function() {
 
     const texto =
-        this.value.toLowerCase().trim();
+        this.value
+        .toLowerCase()
+        .trim();
+
+
+    if (!texto) {
+
+        mostrarSillas();
+
+        return;
+
+    }
 
 
     const resultados =
-        productos.filter(producto =>
+        productosSillas.filter(producto =>
 
-            producto.categoria === "Sillas"
+            producto.nombre
+            .toLowerCase()
+            .includes(texto)
 
-            &&
+            ||
 
-            (
-                producto.nombre
-                .toLowerCase()
-                .includes(texto)
-
-                ||
-
-                producto.codigo
-                .toLowerCase()
-                .includes(texto)
-            )
+            producto.codigo
+            .toLowerCase()
+            .includes(texto)
 
         );
 
 
-    mostrarProductosEnContenedor(
-        resultados,
-        contenedor
-    );
+    mostrarSillas(resultados);
 
 });
 
 </script>
+
 
 </body>
 
